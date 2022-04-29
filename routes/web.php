@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//Localization Route
+Route::get("locale/{lange}", [App\Http\Controllers\LocalizationController::class, 'setLang']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');

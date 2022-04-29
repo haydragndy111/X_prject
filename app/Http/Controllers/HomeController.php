@@ -29,12 +29,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    
     public function index()
     {
         $customers=Customers::all();
         $suppliers=Supplier::all();
         return view ('home.index',compact('customers','suppliers'));
     }
+
     function fetch(Request $request){
         $select = $request->get('select');
         $value = $request->get('value');
