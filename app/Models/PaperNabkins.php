@@ -13,7 +13,6 @@ class PaperNabkins extends Model
         'width',
         'height',
         'metrial_color',
-        'paper_color',
         'layer_number',
         'paper_thickness',
         'quantity_per_item',

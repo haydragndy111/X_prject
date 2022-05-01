@@ -10,13 +10,13 @@ class PlasticCups extends Model
     use HasFactory;
     protected $fillable=[
                         'product_id',
-                        'size',
+                        'width',
+                        'height',
+                        'length',
                         'model',
-                        'material_type',
-                        'material_color',
                         'quantity_per_item',
-                        'effects'
-    ];
+                        'effects',
+                ];
     public function product(){
         return $this->hasOne(Product::class);
     }

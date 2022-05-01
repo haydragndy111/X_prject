@@ -45,9 +45,14 @@ Route::group(['prefix' => 'home'], function () {
 
 Route::resource('product', App\Http\Controllers\ProductController::class);
 Route::post('product/create2', [App\Http\Controllers\ProductController::class, 'create2'])->name('product.create2');
-Route::resource('product/PaperCup', App\Http\Controllers\PaperCupController::class);
-Route::resource('product/PlasticCups', App\Http\Controllers\PlasticCupsController::class);
 Route::resource('product/PaperBox', App\Http\Controllers\PaperBoxController::class);
+Route::resource('product/PaperCup', App\Http\Controllers\PaperCupController::class);
+Route::resource('product/PaperWrap', App\Http\Controllers\PaperWrapController::class);
+Route::resource('product/PaperNabkins', App\Http\Controllers\PaperNabkinsController::class);
+Route::resource('product/PlasticCups', App\Http\Controllers\PlasticCupsController::class);
+Route::resource('product/HandlePaperBagController', App\Http\Controllers\HandlePaperBagController::class);
+Route::resource('product/SosWithoutHandleBag', App\Http\Controllers\SosWithoutHandleBagController::class);
+Route::resource('product/PlasticBag', App\Http\Controllers\PlasticBagController::class);
 Route::resource('process', App\Http\Controllers\ProcessController::class);
 Route::resource('supplier', App\Http\Controllers\SupplierController::class);
 Route::resource('customer', App\Http\Controllers\CustomersController::class);

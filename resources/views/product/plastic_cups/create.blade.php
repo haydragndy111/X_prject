@@ -54,10 +54,8 @@
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
                                 <select name="product_name" class="form-control">
                                     <option value="" selected disabled>...</option>
-                                    <option value="Paper Bag With Flat Handle Kraft Brown">Paper Bag With Flat Handle Kraft Brown</option>
-                                    <option value="Plastic CupU-Shaped PP Clea">Plastic CupU-Shaped PP Clear</option>
-                                    <option value="Plastic Cup Sauce PP Black">Plastic Cup Sauce PP Black</option>
-                                    <option value="Plastic Cup IceCream PET Black">Plastic Cup IceCream PET Black</option>
+                                    <option value="paper_cup_single_wall">Paper Cup Single Wall</option>
+                                    <option value="paper_cup_double_wall">Paper Cup Double Wall</option>
                                 </select>
                             </div>
                             {{-- <div class="col">
@@ -73,16 +71,33 @@
                                 <select name="model" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
-                                    <option value="single wall">Single Wall</option>
-                                    <option value="double wall">Double Wall</option>
+                                    <option value="Classic">Classic</option>
+                                    <option value="U-Shaped">U-Shaped</option>
+                                    <option value="Sauce Cup">Sauce Cup</option>
+                                    <option value="IceCream Cup">IceCream Cup</option>
                                 </select>
+                            </div>
+                            <div class="col">
+                                <label for="length">Length</label>
+                                <input type="decimal" name="length" placeholder="Length" class="form-control">
                             </div>
                             
                         </div>
                         {{-- 3 --}}
                         <br>
+                        {{-- 4 --}}
                         <div class="row">
-                            
+                            <div class="col">
+                                <label for="width">Width</label>
+                                <input type="decimal" name="width" placeholder="width" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="height">Height</label>
+                                <input type="decimal" name="height" placeholder="height" class="form-control">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
                             <div class="col">
                                 <label for="product_type" class="control-label">Product Type</label>
                                 <select name="product_type" class="form-control">
@@ -123,12 +138,21 @@
                         {{-- 4 --}}
                         <div class="row">
                             <div class="col">
+                                <label for="material_type" class="control-label">Material Type</label>
+                                <select name="material_type" class="form-control">
+                                    <!--placeholder-->
+                                    <option value="" selected disabled>...</option>
+                                    <option value="PET">PET</option>
+                                    <option value="PP">PP</option>
+                                </select>
+                            </div>
+                            <div class="col">
                                 <label for="material_color" class="control-label">Material Colors</label>
                                 <select name="material_color" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
-                                    <option value="white">White</option>
-                                    <option value="brown">Brown</option>
+                                    <option value="Clear">Clear</option>
+                                    <option value="Black">Black</option>
                                 </select>
                             </div>
                         </div>
@@ -139,63 +163,23 @@
                                 <label for="quantity_per_item">Quantity</label>
                                 <input type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
                             </div>
-                            <div class="col">
-                                <label for="length">Length</label>
-                                <input type="double" name="length" placeholder="quantity" class="form-control">
-                            </div>
-                        </div>
-                        <br>
-                        {{-- 4 --}}
-                        <div class="row">
-                            <div class="col">
-                                <label for="width">Width</label>
-                                <input type="double" name="width" placeholder="quantity" class="form-control">
-                            </div>
-                            <div class="col">
-                                <label for="height">Height</label>
-                                <input type="double" name="height" placeholder="quantity" class="form-control">
-                            </div>
+                            
                         </div>
                         <br>
                         {{-- 5 --}}
                         <div class="row">
                             <div class="col">
                                 <label for="effets" class="control-label">Effects</label>
-                                <select name="effects" class="form-control">
+                                <select name="effects[]" multiple='multiple' class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="SPOT UV">SPOT UV</option>
                                 </select>
                             </div>
                             
-                            <div class="col">
-                                <label for="uom" class="control-label">UOM</label>
-                                <select name="uom" class="form-control">
-                                    <!--placeholder-->
-                                    <option value="" selected disabled>...</option>
-                                    <option value="pcs">Pcs</option>
-                                    <option value="ctn">Ctn</option>
-                                </select>
-                            </div>
                         </div>
                         <br>
                         {{-- 6 --}}
-                        {{-- 7 --}}
-                        <div class="row">
-                            <div class="col">
-                                <label for="size">Size</label>
-                                <input type="varchar" name="size" placeholder="size" class="form-control">
-                            </div>
-                            <div class="col">
-                                <label for="thickness">Thickness</label>
-                                <input type="double" name="thickness" placeholder="thickness" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label for="capacity">Capacity</label>
-                                <input type="number" name="capacity" placeholder="size" class="form-control">
-                            </div>
-                        </div>
+                        
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary">Create</button>
                         </div>

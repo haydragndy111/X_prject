@@ -10,10 +10,10 @@ class HandlePaperBag extends Model
     use HasFactory;
     protected $fillable=[
         'product_id',
-        'material_type',
+    
         'material_colors',
         'paper_thickness',
-        'handle_model',
+        
         'base_width',
         'base_height',
         'print_type',

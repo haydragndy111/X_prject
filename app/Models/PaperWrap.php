@@ -14,7 +14,6 @@ class PaperWrap extends Model
         'height',
         'metrial_type',
         'metrial_color',
-        'paper_color',
         'paper_thickness',
         'quantity_per_item',
         'item_weight',

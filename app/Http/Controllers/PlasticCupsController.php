@@ -38,10 +38,9 @@ class PlasticCupsController extends Controller
      */
     public function store(Request $request)
     {
-        dd("here");
         $file=new File;
         $product=new Product;
-        $paperCup=new PaperCup;
+        $plasticCup=new PlasticCups;
         
         // phase 1 Product Saving
         $product->product_department=$request->product_department;
@@ -76,19 +75,17 @@ class PlasticCupsController extends Controller
 
         // phase 2 Completed
 
-        // phase 3 PaperCup Saving
-        $paperCup->product_id=$product->id;
-        $paperCup->size=$request->size;
-        $paperCup->quantity_per_item=$request->quantity_per_item;
-        $paperCup->material_type=$request->material_type ;
-        $paperCup->material_color=$request->material_color;
-        $paperCup->finger_print_color=$request->finger_print_color;
-        $paperCup->uom=$request->uom;
-        $paperCup->capacity=$request->capacity;
-        $paperCup->effects=$request->effects;
-        $paperCup->thickness=$request->thickness;
-        $paperCup->save();
-        dd($paperCup);
+        // phase 3 plasticCup Saving
+        $plasticCup->product_id=$product->id;
+        $plasticCup->width=$request->width;
+        $plasticCup->height=$request->height;
+        $plasticCup->length=$request->length;
+        $plasticCup->quantity_per_item=$request->quantity_per_item;
+        $plasticCup->material_type=$request->material_type ;
+        $plasticCup->material_color=$request->material_color;
+        $plasticCup->effects=$request->effects[0];
+        $plasticCup->save();
+        dd($plasticCup);
     }
 
     /**

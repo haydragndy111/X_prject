@@ -25,16 +25,14 @@
                                 <option value="">...</option>
                                 <option value="paper_boxes">Paper Box</option>
                                 <option value="paper_cups">Paper cup</option>
-                                <option value="handle_paper_bags">Paper Bag With Handle</option>
-                                <option value="sos_without_handle_bags">SOS Bag Without Handle</option>
-                                <option value="sachel_bag">Sachel Bags</option>
                                 <option value="paper_wraps">Paper Wrap</option>
                                 <option value="paper_nabkins">Paper Knabkins</option>
                                 <option value="plastic_cups">Plastic Cup</option>
+                                <option value="handle_paper_bags">Paper Bag With Handle</option>
+                                <option value="sos_without_handle_bags">SOS Bag Without Handle</option>
                                 <option value="plastic_bags">Plastic Bag</option>
+                                <option value="sachel_bag">Sachel Bags</option>
                                 <option value="corrugated_boxes">corrugated Box</option>
-                                <option value="sachal_bags">Sachal Bag</option>
-                                <option value="sos_without_handle_bags">SOS Without Handle Bag</option>
                             </select>
                             <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">Add New Product </button>
                         </form>

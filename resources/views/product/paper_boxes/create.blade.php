@@ -34,7 +34,7 @@
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{route('PaperCup.store')}}" method="POST" enctype="multipart/form-data" autocomplete="off">
+                    <form action="{{route('PaperBox.store')}}" method="POST" enctype="multipart/form-data" autocomplete="off">
                         @csrf
                         {{-- 1 --}}
                         <div class="row">
@@ -44,8 +44,6 @@
                                 <select name="product_department" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Packaging">Packaging</option>
-                                    <option value="Design Service">Design Service</option>
-                                    <option value="Logistics Service">Logistics Service</option>
                                 </select>
                             </div>
                             <input type="text" name="product_class" value="{{$type}}" class="form-control" hidden>
@@ -54,14 +52,14 @@
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
                                 <select name="product_name" class="form-control">
                                     <option value="" selected disabled>...</option>
-                                    <option value="paper_cup_single_wall">Paper Cup Single Wall</option>
-                                    <option value="paper_cup_double_wall">Paper Cup Double Wall</option>
+                                    <option value="Paper Box Cubica Infercode White">Paper Box Cubical Infercode White</option>
+                                    <option value="Paper Box Rectangular Duplex White">Paper Box Rectangular Duplex White</option>
+                                    <option value="Paper Box Drawer Kraft Brown">Paper Box Drawer Kraft Brown</option>
+                                    <option value="Paper Box Cylinder">Paper Box Cylinder</option>
+                                    <option value="Paper Box Triangle">Paper Box Triangle</option>
+                                    
                                 </select>
                             </div>
-                            {{-- <div class="col">
-                                <input class="form-control fc-datepicker" name="category_type" placeholder="YYYY-MM-DD"
-                                    type="text" value="{{$type}}">
-                            </div> --}}
                         </div>
                         <br>
                         {{-- 2 --}}
@@ -92,6 +90,7 @@
                                 <label for="height">Height</label>
                                 <input type="double" name="height" placeholder="height" class="form-control">
                             </div>
+                            
                         </div>
                         <br>
                         <div class="row">
@@ -140,11 +139,13 @@
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="kraft">Kraft</option>
+                                    <option value="Infercode">Infercode</option>
+                                    <option value="Dupex">Duplex</option>
                                 </select>
                             </div>
                             <div class="col">
-                                <label for="material_color" class="control-label">Material Colors</label>
-                                <select name="material_color" class="form-control">
+                                <label for="material_colors" class="control-label">Material Colors</label>
+                                <select name="material_colors" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="white">White</option>
@@ -160,8 +161,13 @@
                                 <input type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
                             </div>
                             <div class="col">
-                                <label for="finger_print_color">Finger Print Color</label>
-                                <input type="text" name="finger_print_color" placeholder="color" class="form-control">
+                                <label for="print_type">Print Type</label>
+                                <select name="print_type" class="form-control">
+                                    <!--placeholder-->
+                                    <option value="" selected disabled>...</option>
+                                    <option value="Single Face">Single Face</option>
+                                    <option value="Double Face">Double Face</option>
+                                </select>
                             </div>
                         </div>
                         <br>
@@ -169,40 +175,103 @@
                         <div class="row">
                             <div class="col">
                                 <label for="effets" class="control-label">Effects</label>
-                                <select name="effects" class="form-control">
-                                    <option value="" selected disabled>...</option>
-                                    <option value="gold foil">Gold Foil</option>
-                                    <option value="silver foil">Silver Foil</option>
+                                <select name="effects[]"  multiple="multiple" class="form-control">
+                                    <option value="" selected disabled >...</option>
+                                    <option value="Copper Foil">Copper Foil</option>
+                                    <option value="Green Foil">Green Foil</option>
+                                    <option value="Bronze Foil">Bronze Foil</option>
+                                    <option value="Red Foil">Red Foil</option>
+                                    <option value="Black Foil">Black Foil</option>
                                 </select>
                             </div>
                             
                             <div class="col">
                                 <label for="uom" class="control-label">UOM</label>
-                                <select name="uom" class="form-control">
+                                <select name="uom" class="form-conzztrol">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
-                                    <option value="pcs">Pcs</option>
-                                    <option value="ctn">Ctn</option>
+                                    <option value="KG">KG</option>
+                                    <option value="Ream">Ream</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="capacity">Capacity</label></label>
+                                <select name="capacity" class="form-control">
+                                    <!--placeholder-->
+                                    <option value="" selected disabled>...</option>
+                                    <option value="gm">gm</option>
                                 </select>
                             </div>
                         </div>
                         <br>
                         {{-- 6 --}}
-                        {{-- 7 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="size">Size</label>
-                                <input type="varchar" name="size" placeholder="size" class="form-control">
+                                <label for="single_board_height">Single Board Width</label>
+                                <input type="float" name="single_board_height" placeholder="number" class="form-control">
                             </div>
                             <div class="col">
-                                <label for="thickness">Thickness</label>
-                                <input type="double" name="thickness" placeholder="thickness" class="form-control">
+                                <label for="single_board_width">Single Board Width</label>
+                                <input type="float" name="single_board_width" placeholder="number" class="form-control">
                             </div>
+                            
+                        </div>
+                        {{-- 7 --}}
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="solovan_layer">Solovan Layer</label>
+                                <select name="solovan_layer" class="form-control">
+                                    <!--placeholder-->
+                                    <option value="" selected disabled>...</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select> 
+                            </div>                           
+                            <div class="col">
+                                <label for="uv_layer">UV Layer</label>
+                                <select name="uv_layer" class="form-control">
+                                    <!--placeholder-->
+                                    <option value="" selected disabled>...</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select> 
+                            </div>
+                            <div class="col">
+                                <label for="coverage">Coverage</label>
+                                <select name="coverage" class="form-control">
+                                    <!--placeholder-->
+                                    <option value="" selected disabled>...</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select> 
+                            </div>
+                        </div>
+                        {{-- 7 --}}
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="paper_thickness">Paper Thickness</label>
+                                <input type="float" name="paper_thickness" placeholder="thickness" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="glue_points_number">Glue Points Count</label>
+                                <input type="number" name="glue_points_number" placeholder="count" class="form-control">
+                            </div>
+                            
                         </div>
                         <div class="row">
                             <div class="col">
-                                <label for="capacity">Capacity</label>
-                                <input type="number" name="capacity" placeholder="size" class="form-control">
+                                <label for="window_shape">Window Width</label>
+                                <input type="text" name="window_shape" placeholder="shape" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="window_width">Window Width</label>
+                                <input type="float" name="window_width" placeholder="width" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="window_height">Window Height</label>
+                                <input type="float" name="window_height" placeholder="heighht" class="form-control">
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">
