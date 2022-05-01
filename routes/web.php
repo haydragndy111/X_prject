@@ -17,6 +17,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//chartjs Route
+Route::get("stock/add", [App\Http\Controllers\StockController::class, 'create']);
+Route::post("stock/add", [App\Http\Controllers\StockController::class, 'store']);
+Route::get("stocks", [App\Http\Controllers\StockController::class, 'index']);
+// Route::get("stock/chart", [App\Http\Controllers\StockController::class, 'chart']);
+
+
+// Route::get("stocks2", [App\Http\Controllers\StockController::class, 'index2']);
+Route::get("status/chart", [App\Http\Controllers\StockController::class, 'statusChart']);
+Route::get("marginPer", [App\Http\Controllers\StockController::class, 'marginPer']);
+
+Route::get("marginUser/chart", [App\Http\Controllers\StockController::class, 'marginUser']);
+
+
+
+
 
 //Localization Route
 Route::get("locale/{lange}", [App\Http\Controllers\LocalizationController::class, 'setLang']);

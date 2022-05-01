@@ -168,7 +168,7 @@
                             </div>
                             
                             <div class="col">
-                                <label for="uom" class="control-label">UOM</label>
+                                <label for="uom" class="control-label">@lang('lang.UOM')</label>
                                 <select name="uom" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>

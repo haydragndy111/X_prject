@@ -106,6 +106,7 @@ return[
     "Notes"=>"ملاحظات",
     "paper_boxes"=>"صناديق ورقية",
     "plastic_cups"=>"أكواب ورقية",
+    "UOM"=>"وحدة القياس",
 
     'Hi, welcome back!'=>'أهلا بعودتك',
     'English'=>'الاجنبية',

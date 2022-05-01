@@ -10,6 +10,7 @@ return[
     "attatchment"=>"attatchment",
     "Category Type"=>"Category Type",
     "Products Table"=>"Products Table",
+    "UOM"=>"Unit Of Measuring",
 
     "Paper Box"=>"Paper Box",
     "Paper cup"=>"Paper cup",

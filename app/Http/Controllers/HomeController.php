@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 use App\Models\Supplier;
 use App\Models\Customers;
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
-
+use DB;
 
 class HomeController extends Controller
 {
@@ -27,7 +28,11 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('home');
+        $pend=DB::select('select count(status) as state from customers where status="pending"');
+        $success=DB::select('select count(status) as state from customers where status="success"');
+        $failed=DB::select('select count(status) as state from customers where status="failed"');
+       $marginPer=DB::select('select round(sum(sp)/sum(pp),4)*100 as marginPer , round(sum(sp)/sum(pp),4) as margin , created_at  from projects group by created_at');
+        return view('home',compact('pend','success','failed','marginPer'));
     }
     
     public function index()
