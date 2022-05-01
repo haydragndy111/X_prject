@@ -21,8 +21,8 @@ class CreatePlasticBagsTable extends Migration
             $table->decimal('weight',5,2);
             $table->decimal('bag_thickness',5,2);
             $table->string('base_type');
-            $table->integer('quantity_per_item');
-            $table->integer('quantity_per_tons');
+            $table->integer('quantity_per_item')->nullable();
+            $table->integer('quantity_per_tons')->nullable();
             $table->string('material_type');
             $table->string('material_color');
             $table->timestamps();

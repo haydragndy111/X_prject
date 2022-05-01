@@ -50,9 +50,11 @@ Route::resource('product/PaperCup', App\Http\Controllers\PaperCupController::cla
 Route::resource('product/PaperWrap', App\Http\Controllers\PaperWrapController::class);
 Route::resource('product/PaperNabkins', App\Http\Controllers\PaperNabkinsController::class);
 Route::resource('product/PlasticCups', App\Http\Controllers\PlasticCupsController::class);
-Route::resource('product/HandlePaperBagController', App\Http\Controllers\HandlePaperBagController::class);
+Route::resource('product/HandlePaperBag', App\Http\Controllers\HandlePaperBagController::class);
 Route::resource('product/SosWithoutHandleBag', App\Http\Controllers\SosWithoutHandleBagController::class);
 Route::resource('product/PlasticBag', App\Http\Controllers\PlasticBagController::class);
+Route::resource('product/SachelBag', App\Http\Controllers\SachelBagController::class);
+Route::resource('product/CorrugatedBox', App\Http\Controllers\CorrugatedBoxController::class);
 Route::resource('process', App\Http\Controllers\ProcessController::class);
 Route::resource('supplier', App\Http\Controllers\SupplierController::class);
 Route::resource('customer', App\Http\Controllers\CustomersController::class);

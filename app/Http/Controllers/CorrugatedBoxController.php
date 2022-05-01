@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\CorrugatedBox;
+use App\Models\Product;
+use App\Models\File;
 use Illuminate\Http\Request;
 
 class CorrugatedBoxController extends Controller
@@ -35,7 +37,69 @@ class CorrugatedBoxController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $file=new File;
+        $product=new Product;
+        $corrugatedBox=new CorrugatedBox;
+        
+        // phase 1 Product Saving
+        $product->product_department=$request->product_department;
+        $product->product_class=$request->product_class;
+        $product->model=$request->model;
+        $product->product_name=$request->product_name;
+        $product->additional_text=$request->additional_text;
+        $product->product_type=$request->product_type;
+        $product->branding=$request->branding;
+        $product->save();
+        // $pid=$product->id;
+        // phase 1 Completed
+        
+
+        // phase 2 File saveing
+        if($request->has('files')){
+            foreach($request->file('files') as $file){
+                // dd('here');
+                $fileName = 'file-'.time().rand(1,1000).'.'.$file->getClientOriginalExtension();
+                $file->move('product_files',$fileName);
+                File::create([
+                    'product_id'=>$product->id,
+                    'file'=>$fileName,
+                    'extenstion'=>$file->getClientOriginalExtension()
+                ]);
+            }
+        }
+
+        // $pdf = PDF::loadView('pdf.invoice', $data);
+
+        // Storage::put('public/pdf/invoice.pdf', $pdf->output());
+
+        // return $pdf->download('invoice.pdf');
+        // dd($request);
+        // $url = "http://www.google.co.in/intl/en_com/images/srpr/logo1w.png";
+        // $contents = file_get_contents($url);
+        // $name = substr($url, strrpos($url, '/') + 1);
+        // Storage::put($name, $contents);
+
+        // phase 2 Completed
+
+        // phase 3 corrugatedBox Saving
+        $corrugatedBox->product_id=$product->id;
+        $corrugatedBox->material_type=$request->material_type ;
+        $corrugatedBox->material_color=$request->material_color;
+        $corrugatedBox->box_width=$request->box_width;
+        $corrugatedBox->box_height=$request->box_height;
+        $corrugatedBox->box_length=$request->box_length;
+        $corrugatedBox->quantity_per_item=$request->quantity_per_item;
+        $corrugatedBox->flat_box_width=$request->flat_box_width;
+        $corrugatedBox->flat_box_height=$request->flat_box_height;
+        $corrugatedBox->solovan_layer=$request->solovan_layer;
+        $corrugatedBox->uv_layer=$request->uv_layer;
+        $corrugatedBox->coverage=$request->coverage;
+        $corrugatedBox->glue_points_number=$request->glue_points_number;
+        $corrugatedBox->merged_normal_layer=$request->merged_normal_layer;
+        $corrugatedBox->finger_print_color=$request->finger_print_color;
+        $corrugatedBox->save();
+        // dd($corrugatedBox);
     }
 
     /**

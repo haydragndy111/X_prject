@@ -34,7 +34,7 @@
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{route('HandlePaperBag.store')}}" method="POST" enctype="multipart/form-data" autocomplete="off">
+                    <form action="{{route('SachelBag.store')}}" method="POST" enctype="multipart/form-data" autocomplete="off">
                         @csrf
                         {{-- 1 --}}
                         <div class="row">
@@ -49,32 +49,10 @@
                             <input type="text" name="product_class" value="{{$type}}" class="form-control" hidden>
                             <div class="col">
                                 <label for="product_name" class="control-label">Product Name</label>
-                                {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <select name="product_name" class="form-control">
-                                    <option value="" selected disabled>...</option>
-                                    <option value="Paper Bag With Twisted Handle Kraft White">Paper Bag With Twisted Handle Kraft White</option>
-                                    <option value="Paper Bag With Flat Handle Kraft Brown">Paper Bag Rectangular Duplex White</option>
-
-                                </select>
+                                <input type="text" class="form-control" id="inputName" name="product_name">
                             </div>
-                        </div>
-                        <br>
-                        {{-- 2 --}}
-                        <div class="row">
-                            <div class="col">
-                                <label for="model" class="control-label">Handle Model</label>
-                                <select name="model" class="form-control">
-                                    <!--placeholder-->
-                                    <option value="" selected disabled>...</option>
-                                    <option value="Without Handle">Without Handle</option>
-                                    <option value="Without Handle & Base">Without Handle & Base</option>
-                                    
-                                </select>
-                            </div>
-                            
                         </div>
                         {{-- 3 --}}
-                        
                         <br>
                         <div class="row">
                             <div class="col">
@@ -118,8 +96,21 @@
                         <div class="row">
                             
                             <div class="col">
-                                <label for="material_colors" class="control-label">Material Colors</label>
-                                <select name="material_colors" class="form-control">
+                                <label for="material_type" class="control-label">Material Type</label>
+                                <select name="material_type" class="form-control">
+                                    <!--placeholder-->
+                                    <option value="" selected disabled>...</option>
+                                    <option value="WB">WB</option>
+                                    <option value="BK">BK</option>
+                                    <option value="Glassine">Glassine</option>
+                                    <option value="NK">NK</option>
+                                    <option value="MG">MG</option>
+                                    <option value="DG">DG</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="material_color" class="control-label">Material Color</label>
+                                <select name="material_color" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="White">White</option>
@@ -148,33 +139,21 @@
                                 </select>
                             </div>
                         </div>
-                        <br>
-                        {{-- 5 --}}
-                        <div class="row">
-                            <div class="col">
-                                <label for="effets" class="control-label">Effects</label>
-                                <select name="effects[]"  multiple="multiple" class="form-control">
-                                    <option value="" selected disabled >...</option>
-                                    <option value="Embossed">Embossed</option>
-                                    <option value="Debossed">Debossed</option>
-                                    <option value="Matt Laminated">Matt Laminated</option>
-                                    <option value="Glossy Laminated">Glossy Laminated</option>
-                                    
-                                </select>
-                            </div>
-                            
-                            
-                        </div>
+
                         <br>
                         {{-- 6 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="base_width">Base Width</label>
-                                <input type="float" name="base_width" placeholder="number" class="form-control">
+                                <label for="width">Width</label>
+                                <input type="float" name="width" placeholder="number" class="form-control">
                             </div>
                             <div class="col">
-                                <label for="base_height">Base Height</label>
-                                <input type="float" name="base_height" placeholder="number" class="form-control">
+                                <label for="height">Height</label>
+                                <input type="float" name="height" placeholder="number" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="gusset">Gusset</label>
+                                <input type="float" name="gusset" placeholder="number" class="form-control">
                             </div>
                             
                         </div>
@@ -186,7 +165,19 @@
                                 <label for="paper_thickness">Paper Thickness</label>
                                 <input type="float" name="paper_thickness" placeholder="thickness" class="form-control">
                             </div>
-                        
+                            <div class="col">
+                                <label for="pe_layer">PE Layer</label>
+                                <select name="pe_layer" class="form-control">
+                                    <!--placeholder-->
+                                    <option value="" selected disabled>...</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select> 
+                            </div>
+                            <div class="col">
+                                <label for="pe_layer_thickness">PE Layer Thickness</label>
+                                <input type="float" name="pe_layer_thickness" placeholder="number" class="form-control">
+                            </div>
                         </div>
                         
                         <div class="d-flex justify-content-center">

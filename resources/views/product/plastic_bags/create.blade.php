@@ -123,7 +123,6 @@
                         <br>
                         {{-- 4 --}}
                         <div class="row">
-                            
                             <div class="col">
                                 <label for="material_type" class="control-label">Material Type</label>
                                 <select name="material_type" class="form-control">
@@ -134,8 +133,8 @@
                                 </select>
                             </div>
                             <div class="col">
-                                <label for="material_colors" class="control-label">Material Colors</label>
-                                <select name="material_colors" class="form-control">
+                                <label for="material_color" class="control-label">Material Colors</label>
+                                <select name="material_color" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Clear">Clear</option>
@@ -144,8 +143,8 @@
                                 </select>
                             </div>
                             <div class="col">
-                                <label for="print_type" class="control-label">Print Type</label>
-                                <select name="print_type" class="form-control">
+                                <label for="base_type" class="control-label">Base Type</label>
+                                <select name="base_type" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Base">Base</option>
@@ -172,15 +171,19 @@
                         <div class="row">
                             <div class="col">
                                 <label for="width">Width</label>
-                                <input type="float" name="base_width" placeholder="number" class="form-control">
+                                <input type="float" name="width" placeholder="number" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="height">Height</label>
-                                <input type="float" name="base_height" placeholder="number" class="form-control">
+                                <input type="float" name="height" placeholder="number" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="length">Length</label>
+                                <input type="float" name="length" placeholder="number" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="weight">ًWeight</label>
-                                <input type="float" name="base_height" placeholder="number" class="form-control">
+                                <input type="float" name="weight" placeholder="number" class="form-control">
                             </div>
                             
                         </div>
