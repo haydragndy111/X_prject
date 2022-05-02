@@ -55,6 +55,7 @@ Route::resource('product/SosWithoutHandleBag', App\Http\Controllers\SosWithoutHa
 Route::resource('product/PlasticBag', App\Http\Controllers\PlasticBagController::class);
 Route::resource('product/SachelBag', App\Http\Controllers\SachelBagController::class);
 Route::resource('product/CorrugatedBox', App\Http\Controllers\CorrugatedBoxController::class);
+Route::resource('product/Other', App\Http\Controllers\OtherController::class);
 Route::resource('process', App\Http\Controllers\ProcessController::class);
 Route::resource('supplier', App\Http\Controllers\SupplierController::class);
 Route::resource('customer', App\Http\Controllers\CustomersController::class);

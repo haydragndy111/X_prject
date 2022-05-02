@@ -10,7 +10,6 @@ class CorrugatedBox extends Model
     use HasFactory;
     protected $fillable=[
         'product_id',
-        'product_shape',
         'material_type',
         'material_color',
         'model',

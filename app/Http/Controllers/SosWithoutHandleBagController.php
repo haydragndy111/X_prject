@@ -37,6 +37,29 @@ class SosWithoutHandleBagController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            // product section
+            'product_department'=>'required',
+            'product_reference'=>'required|unique',
+            'product_class'=>'required',
+            'model='=>'required',
+            'product_name'=>'required',
+            'additional_text'=>'required',
+            'product_type'=>'required',
+            'branding'=>'required',
+            'files.*'=>'required',
+            // cat section
+            'material_colors'=>'required',
+            'paper_thickness'=>'required',
+            'print_type'=>'required',
+            'quantity_per_item'=>'required',
+            'quantity_per_tons'=>'required',
+            'base_width'=>'required',
+            'base_height'=>'required',
+            'bag_width'=>'required',
+            'bag_height'=>'required',
+            'effects'=>'required',
+        ]);
         // dd($request);
         $file=new File;
         $product=new Product;
@@ -79,18 +102,15 @@ class SosWithoutHandleBagController extends Controller
 
         // phase 3 sosWithoutHandleBag Saving
         $sosWithoutHandleBag->product_id=$product->id;
-        
         $sosWithoutHandleBag->material_colors=$request->material_colors;
         $sosWithoutHandleBag->paper_thickness=$request->paper_thickness;
-
         $sosWithoutHandleBag->print_type=$request->print_type;
-        $sosWithoutHandleBag->quantity_per_tons=$request->quantity_per_tons;
+        $sosWithoutHandleBag->quantity_per_item=$request->quantity_per_item;
         $sosWithoutHandleBag->quantity_per_tons=$request->quantity_per_tons;
         $sosWithoutHandleBag->base_width=$request->base_width;
         $sosWithoutHandleBag->base_height=$request->base_height;
         $sosWithoutHandleBag->bag_width=$request->bag_width;
         $sosWithoutHandleBag->bag_height=$request->bag_height;
-        
         $sosWithoutHandleBag->effects=$request->effects[0];
         $sosWithoutHandleBag->save();
         // dd($sosWithoutHandleBag);

@@ -24,6 +24,7 @@
                     Add a new one</span>
             </div>
         </div>
+		@include('inc.message')
     </div>
     <!-- breadcrumb -->
 @endsection

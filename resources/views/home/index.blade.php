@@ -33,6 +33,25 @@
                                 <option value="plastic_bags">Plastic Bag</option>
                                 <option value="sachel_bag">Sachel Bags</option>
                                 <option value="corrugated_boxes">corrugated Box</option>
+                                {{-- others section --}}
+                                <option value="others.paper_plate">Paper Plate</option>
+                                <option value="others.platic_plate">Plastic Plate</option>
+                                <option value="others.cup_holder_plate">Cup Holder Plate</option>
+                                <option value="others.paper_sleeve">Paper Sleeve</option>
+                                <option value="others.cartoon_sleeve">Cartoon Sleeve</option>
+                                <option value="others.plastic_container">Plastic Container</option>
+                                <option value="others.paper_sticker">Paper Sticker</option>
+                                <option value="others.plastic_sticker">Plastic Sticker</option>
+                                <option value="others.paper_bowl">Paper Bowl</option>
+                                <option value="others.wet_pipes">Wet Pipes</option>
+                                <option value="others.plastic_cutleries">Plastic Cutleries</option>
+                                <option value="others.wooden">Wooden Cutleries</option>
+                                <option value="others.plastic_spoon">Plastic Spoon</option>
+                                <option value="others.plastic_knife">Plastic Knife</option>
+                                <option value="others.plastic_straw">Plastic Straw</option>
+                                <option value="others.plastic_lid">Plastic Lid</option>
+                                <option value="others.paper_lid">Paper Lid</option>
+                                <option value="others.printing">Printing Cliché</option>
                             </select>
                             <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">Add New Product </button>
                         </form>

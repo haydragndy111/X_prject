@@ -37,6 +37,28 @@ class PaperWrapController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            // product section
+            'product_department'=>'required',
+            'product_reference'=>'required|unique',
+            'product_class'=>'required',
+            'model='=>'required',
+            'product_name'=>'required',
+            'additional_text'=>'required',
+            'product_type'=>'required',
+            'branding'=>'required',
+            'files.*'=>'required',
+            // cat section
+            'width'=>'required',
+            'height'=>'required',
+            'material_type'=>'required',
+            'material_colors'=>'required',
+            'quantity_per_item'=>'required',
+            'paper_thickness'=>'required',
+            'item_weight'=>'required',
+            'pe_layer'=>'required',
+            'merged_layer_thickness'=>'required',
+        ]);
         // dd($request);
         $file=new File;
         $product=new Product;
@@ -81,7 +103,6 @@ class PaperWrapController extends Controller
         $paperWrap->width=$request->width;
         $paperWrap->height=$request->height;
         $paperWrap->material_type=$request->material_type;
-        
         $paperWrap->material_colors=$request->material_colors;
         $paperWrap->quantity_per_item=$request->quantity_per_item;
         $paperWrap->paper_thickness=$request->paper_thickness;

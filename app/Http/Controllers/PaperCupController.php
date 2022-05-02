@@ -41,7 +41,29 @@ class PaperCupController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->input('effects'));
+        $request->validate([
+            // product section
+            'product_department'=>'required',
+            'product_reference'=>'required|unique',
+            'product_class'=>'required',
+            'model='=>'required',
+            'product_name'=>'required',
+            'additional_text'=>'required',
+            'product_type'=>'required',
+            'branding'=>'required',
+            'files.*'=>'required',
+            // cat section
+            'width'=>'required',
+            'height'=>'required',
+            'length'=>'required',
+            'quantity_per_item'=>'required',
+            'material_type'=>'required',
+            'material_colors'=>'required',
+            'finger_print_color'=>'required',
+            'uom'=>'required',
+            'capacity'=>'required',
+            'thickness'=>'required',
+        ]);
         // dd($request);
         $file=new File;
         $product=new Product;

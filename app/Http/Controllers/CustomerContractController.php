@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\CustomerContract;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
-
-class ProductController extends Controller
+class CustomerContractController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,27 +14,17 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view ('product.index');
+        //
     }
 
     /**
      * Show the form for creating a new resource.
+     *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view ('product.create');
-    }
-    public function create2(Request $request)
-    {
-        // dd($request);
-        $request->validate([
-            'type'=>'required',
-        ]);
-        $type=$request->type;
-        // get product type
-        $str='product.'.$type.'.create';
-        return view ($str,compact('type') );
+        //
     }
 
     /**
@@ -54,10 +41,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\CustomerContract  $customerContract
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(CustomerContract $customerContract)
     {
         //
     }
@@ -65,22 +52,22 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\CustomerContract  $customerContract
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(CustomerContract $customerContract)
     {
-        return view ('product.edit');
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\CustomerContract  $customerContract
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, CustomerContract $customerContract)
     {
         //
     }
@@ -88,10 +75,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\CustomerContract  $customerContract
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(CustomerContract $customerContract)
     {
         //
     }

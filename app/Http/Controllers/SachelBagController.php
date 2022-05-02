@@ -37,6 +37,30 @@ class SachelBagController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            // product section
+            'product_department'=>'required',
+            'product_reference'=>'required|unique',
+            'product_class'=>'required',
+            'model='=>'required',
+            'product_name'=>'required',
+            'additional_text'=>'required',
+            'product_type'=>'required',
+            'branding'=>'required',
+            'files.*'=>'required',
+            // cat section
+            'material_type'=>'required',
+            'material_color'=>'required',
+            'paper_thickness'=>'required',
+            'width'=>'required',
+            'height'=>'required',
+            'gusset'=>'required',
+            'print_type'=>'required',
+            'pe_layer'=>'required',
+            'pe_layer_thicknes'=>'required',
+            'quantity_per_tons'=>'required',
+            'quantity_per_tons'=>'required',
+        ]);
         // dd($request);
         $file=new File;
         $product=new Product;

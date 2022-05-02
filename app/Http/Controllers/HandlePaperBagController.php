@@ -37,6 +37,27 @@ class HandlePaperBagController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            // product section
+            'product_department'=>'required',
+            'product_reference'=>'required|unique',
+            'product_class'=>'required',
+            'model='=>'required',
+            'product_name'=>'required',
+            'additional_text'=>'required',
+            'product_type'=>'required',
+            'branding'=>'required',
+            'files.*'=>'required',
+            // cat section
+            'material_colors'=>'required',
+            'paper_thickness'=>'required',
+            'print_type'=>'required',
+            'quantity_per_to'=>'required',
+            'quantity_per_to'=>'required',
+            'base_width'=>'required',
+            'base_height'=>'required',
+            'effects'=>'required',
+        ]);
         // dd($request);
         $file=new File;
         $product=new Product;
@@ -79,16 +100,13 @@ class HandlePaperBagController extends Controller
 
         // phase 3 handlePaperBag Saving
         $handlePaperBag->product_id=$product->id;
-        
         $handlePaperBag->material_colors=$request->material_colors;
         $handlePaperBag->paper_thickness=$request->paper_thickness;
-
         $handlePaperBag->print_type=$request->print_type;
         $handlePaperBag->quantity_per_tons=$request->quantity_per_tons;
         $handlePaperBag->quantity_per_tons=$request->quantity_per_tons;
         $handlePaperBag->base_width=$request->base_width;
         $handlePaperBag->base_height=$request->base_height;
-        
         $handlePaperBag->effects=$request->effects[0];
         $handlePaperBag->save();
         // dd($handlePaperBag);

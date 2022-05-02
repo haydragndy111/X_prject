@@ -153,20 +153,17 @@
                         <div class="row">
                             <div class="col">
                                 <label for="effets" class="control-label">Effects</label>
-                                <div name="effects[]" class="form-group">
-                                    <label><input type="checkbox" name="effects[]">Embossed</label>
-									<label><input type="checkbox" name="effects[]">Debossed</label>
-									<label><input type="checkbox" name="effects[]">Matt Laminated</label>
-									<label><input type="checkbox" name="effects[]">Glossy Laminated</label>
-									<!--
-									<option value="" selected disabled >...</option>
+                                <select name="effects[]"  multiple="multiple" class="form-control">
+                                    <option value="" selected disabled >...</option>
                                     <option value="Embossed">Embossed</option>
                                     <option value="Debossed">Debossed</option>
                                     <option value="Matt Laminated">Matt Laminated</option>
                                     <option value="Glossy Laminated">Glossy Laminated</option>
-                                     -->
+                                    
                                 </select>
                             </div>
+                            
+                            
                         </div>
                         <br>
                         {{-- 6 --}}

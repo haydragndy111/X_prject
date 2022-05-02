@@ -168,15 +168,25 @@
                         <br>
                         {{-- 5 --}}
                         <div class="row">
-                            <div class="col">
+                            {{-- <div class="col">
                                 <label for="effets" class="control-label">Effects</label>
                                 <select name="effects[]" multiple='multiple' class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="gold foil">Gold Foil</option>
                                     <option value="silver foil">Silver Foil</option>
                                 </select>
+                            </div> --}}
+                            <div class="col">
+                                <label for="effets" class="control-label">Effects</label>
+                                <select name="effects[]" multiple='multiple' class="form-control">
+                                    <option value="" selected disabled>...</option>
+                                    <option value="">
+                                        <input type="text" placeholder="input text">
+                                    </option>
+                                    <option value="gold foil">Gold Foil</option>
+                                    <option value="silver foil">Silver Foil</option>
+                                </select>
                             </div>
-                            
                             <div class="col">
                                 <label for="uom" class="control-label">UOM</label>
                                 <select name="uom" class="form-control">

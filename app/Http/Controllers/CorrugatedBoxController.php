@@ -6,6 +6,9 @@ use App\Models\CorrugatedBox;
 use App\Models\Product;
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
+
 
 class CorrugatedBoxController extends Controller
 {
@@ -37,6 +40,36 @@ class CorrugatedBoxController extends Controller
      */
     public function store(Request $request)
     {
+        $validater = Validator::make($request->all(),[
+        // $this->validate($request,[
+            // product section
+            'product_department'=>'required',
+            // 'product_reference'=>'required|unique',
+            'product_class'=>'required',
+            'product_name'=>'required',
+            'model='=>'required',
+            'additional_text'=>'required',
+            'product_type'=>'required',
+            'branding'=>'required',
+            // cat section
+            'material_type'=>'required',
+            'material_color'=>'required',
+            'box_width'=>'required',
+            'box_height'=>'required',
+            'box_length'=>'required',
+            'quantity_per_item'=>'required',
+            'flat_box_width'=>'required',
+            'flat_box_height'=>'required',
+            'solovan_layer'=>'required',
+            'uv_layer'=>'required',
+            'coverage'=>'required',
+            'glue_points_number'=>'required',
+            'merged_normal_layer'=>'required',
+            'finger_print_color'=>'required',
+        ]);
+        if($validater->fails()){
+            return redircet()->to(url()->previous())->withErrors($validater);
+        }
         // dd($request);
         $file=new File;
         $product=new Product;
@@ -66,12 +99,13 @@ class CorrugatedBoxController extends Controller
                     'file'=>$fileName,
                     'extenstion'=>$file->getClientOriginalExtension()
                 ]);
+                Storage::put('public/pdf/invoice.pdf', $file->output());
             }
         }
 
         // $pdf = PDF::loadView('pdf.invoice', $data);
 
-        // Storage::put('public/pdf/invoice.pdf', $pdf->output());
+        // Storage::put('public/pdf/invoice.pdf', $file->output());
 
         // return $pdf->download('invoice.pdf');
         // dd($request);
