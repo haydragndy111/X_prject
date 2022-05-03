@@ -37,6 +37,38 @@ class PaperBoxController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'product_department'=>'required',
+            'product_reference'=>'required|unique',
+            'product_class'=>'required',
+            'model='=>'required',
+            'product_name'=>'required',
+            'additional_text'=>'required',
+            'product_type'=>'required',
+            'branding'=>'required',
+            'files.*'=>'required',
+            'material_type'=>'required',
+            'material_colors'=>'required',
+            'paper_thickness'=>'required',
+            'model'=>'required',
+            'width'=>'required',
+            'height'=>'required',
+            'length'=>'required',
+            'print_type'=>'required',
+            'quantity_per_it'=>'required',
+            'single_board_wi'=>'required',
+            'single_board_he'=>'required',
+            'solovan_layer=$'=>'required',
+            'uv_layer'=>'required',
+            'coverage'=>'required',
+            'uom'=>'required',
+            'capacity'=>'required',
+            'effects'=>'required',
+            'glue_points_num'=>'required',
+            'window_shape'=>'required',
+            'window_width'=>'required',
+            'window_height'=>'required',
+        ]);
         // dd($request);
         $file=new File;
         $product=new Product;
@@ -44,6 +76,7 @@ class PaperBoxController extends Controller
         
         // phase 1 Product Saving
         $product->product_department=$request->product_department;
+        $product->product_reference=$request->product_reference;
         $product->product_class=$request->product_class;
         $product->model=$request->model;
         $product->product_name=$request->product_name;

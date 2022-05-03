@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PlasticCups;
-use App\Models\Product;
+use App\Models\Other;
 use App\Models\File;
+use App\Models\Product;
 use Illuminate\Http\Request;
-use Storage;
 
-class PlasticCupsController extends Controller
+class OtherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,29 +37,10 @@ class PlasticCupsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            // product section
-            'product_department'=>'required',
-            'product_reference'=>'required|unique',
-            'product_class'=>'required',
-            'model='=>'required',
-            'product_name'=>'required',
-            'additional_text'=>'required',
-            'product_type'=>'required',
-            'branding'=>'required',
-            'files.*'=>'required',
-            // cat section
-            'width'=>'required',
-            'height'=>'required',
-            'length'=>'required',
-            'quantity_per_item'=>'required',
-            'material_type'=>'required',
-            'material_color'=>'required',
-            'effects'=>'required',
-        ]);
+        dd($request);
         $file=new File;
         $product=new Product;
-        $plasticCup=new PlasticCups;
+        $handlePaperBag=new HandlePaperBag;
         
         // phase 1 Product Saving
         $product->product_department=$request->product_department;
@@ -78,6 +58,7 @@ class PlasticCupsController extends Controller
         // phase 2 File saveing
         if($request->has('files')){
             foreach($request->file('files') as $file){
+                // dd('here');
                 $fileName = 'file-'.time().rand(1,1000).'.'.$file->getClientOriginalExtension();
                 $file->move('product_files',$fileName);
                 File::create([
@@ -87,34 +68,15 @@ class PlasticCupsController extends Controller
                 ]);
             }
         }
-
-        // $url = "http://www.google.co.in/intl/en_com/images/srpr/logo1w.png";
-        // $contents = file_get_contents($url);
-        // $name = substr($url, strrpos($url, '/') + 1);
-        // Storage::put($name, $contents);
-
-        // phase 2 Completed
-
-        // phase 3 plasticCup Saving
-        $plasticCup->product_id=$product->id;
-        $plasticCup->width=$request->width;
-        $plasticCup->height=$request->height;
-        $plasticCup->length=$request->length;
-        $plasticCup->quantity_per_item=$request->quantity_per_item;
-        $plasticCup->material_type=$request->material_type ;
-        $plasticCup->material_color=$request->material_color;
-        $plasticCup->effects=$request->effects[0];
-        $plasticCup->save();
-        dd($plasticCup);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PlasticCups  $plasticCups
+     * @param  \App\Models\Other  $other
      * @return \Illuminate\Http\Response
      */
-    public function show(PlasticCups $plasticCups)
+    public function show(Other $other)
     {
         //
     }
@@ -122,10 +84,10 @@ class PlasticCupsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PlasticCups  $plasticCups
+     * @param  \App\Models\Other  $other
      * @return \Illuminate\Http\Response
      */
-    public function edit(PlasticCups $plasticCups)
+    public function edit(Other $other)
     {
         //
     }
@@ -134,10 +96,10 @@ class PlasticCupsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PlasticCups  $plasticCups
+     * @param  \App\Models\Other  $other
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PlasticCups $plasticCups)
+    public function update(Request $request, Other $other)
     {
         //
     }
@@ -145,10 +107,10 @@ class PlasticCupsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PlasticCups  $plasticCups
+     * @param  \App\Models\Other  $other
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PlasticCups $plasticCups)
+    public function destroy(Other $other)
     {
         //
     }

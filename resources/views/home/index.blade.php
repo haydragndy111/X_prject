@@ -23,6 +23,7 @@
                             @csrf
                             <select name="type" class="form-control SlectBox">
                                 <option value="">...</option>
+<<<<<<< HEAD
                                 <option value="paper_boxes">@lang('lang.Paper Box')</option>
                                 <option value="paper_cups">@lang('lang.Paper cup')</option>
                                 <option value="paper_wraps">@lang('lang.Paper Wrap') </option>
@@ -33,6 +34,37 @@
                                 <option value="plastic_bags">@lang('lang.Plastic Bag')</option>
                                 <option value="sachel_bag">@lang('lang.Sachal Bag')</option>
                                 <option value="corrugated_boxes">@lang('lang.corrugated Box')</option>
+=======
+                                <option value="paper_boxes">Paper Box</option>
+                                <option value="paper_cups">Paper cup</option>
+                                <option value="paper_wraps">Paper Wrap</option>
+                                <option value="paper_nabkins">Paper Knabkins</option>
+                                <option value="plastic_cups">Plastic Cup</option>
+                                <option value="handle_paper_bags">Paper Bag With Handle</option>
+                                <option value="sos_without_handle_bags">SOS Bag Without Handle</option>
+                                <option value="plastic_bags">Plastic Bag</option>
+                                <option value="sachel_bag">Sachel Bags</option>
+                                <option value="corrugated_boxes">corrugated Box</option>
+                                {{-- others section --}}
+                                <option value="others.paper_plate">Paper Plate</option>
+                                <option value="others.platic_plate">Plastic Plate</option>
+                                <option value="others.cup_holder_plate">Cup Holder Plate</option>
+                                <option value="others.paper_sleeve">Paper Sleeve</option>
+                                <option value="others.cartoon_sleeve">Cartoon Sleeve</option>
+                                <option value="others.plastic_container">Plastic Container</option>
+                                <option value="others.paper_sticker">Paper Sticker</option>
+                                <option value="others.plastic_sticker">Plastic Sticker</option>
+                                <option value="others.paper_bowl">Paper Bowl</option>
+                                <option value="others.wet_pipes">Wet Pipes</option>
+                                <option value="others.plastic_cutleries">Plastic Cutleries</option>
+                                <option value="others.wooden">Wooden Cutleries</option>
+                                <option value="others.plastic_spoon">Plastic Spoon</option>
+                                <option value="others.plastic_knife">Plastic Knife</option>
+                                <option value="others.plastic_straw">Plastic Straw</option>
+                                <option value="others.plastic_lid">Plastic Lid</option>
+                                <option value="others.paper_lid">Paper Lid</option>
+                                <option value="others.printing">Printing Cliché</option>
+>>>>>>> 8587b0b8ab27e4fb3873c50260e799fea2948a31
                             </select>
                             <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">@lang('lang.Add New Product') </button>
                         </form>

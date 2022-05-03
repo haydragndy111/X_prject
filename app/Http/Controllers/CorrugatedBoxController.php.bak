@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PaperNabkins;
+use App\Models\CorrugatedBox;
 use App\Models\Product;
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
-class PaperNabkinsController extends Controller
+
+class CorrugatedBoxController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,36 +40,46 @@ class PaperNabkinsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validation = Validator::make($request->all(),[
+        // $this->validate($request,[
             // product section
             'product_department'=>'required',
-            'product_reference'=>'required|unique',
+            // 'product_reference'=>'required|unique',
             'product_class'=>'required',
-            'model='=>'required',
             'product_name'=>'required',
+            'model='=>'required',
             'additional_text'=>'required',
             'product_type'=>'required',
             'branding'=>'required',
-            'files.*'=>'required',
             // cat section
-            'width'=>'required',
-            'height'=>'required',
-            'material_colors'=>'required',
+            'material_type'=>'required',
+            'material_color'=>'required',
+            'box_width'=>'required',
+            'box_height'=>'required',
+            'box_length'=>'required',
             'quantity_per_item'=>'required',
-            'layer_number'=>'required',
-            'paper_thickness'=>'required',
-            'sheets_per_packet'=>'required',
+            'flat_box_width'=>'required',
+            'flat_box_height'=>'required',
+            'solovan_layer'=>'required',
+            'uv_layer'=>'required',
+            'coverage'=>'required',
+            'glue_points_number'=>'required',
+            'merged_normal_layer'=>'required',
+            'finger_print_color'=>'required',
         ]);
+        if($validation->fails()){
+            
+        }
         // dd($request);
         $file=new File;
         $product=new Product;
-        $paperNabkins=new PaperNabkins;
+        $corrugatedBox=new CorrugatedBox;
         
         // phase 1 Product Saving
         $product->product_department=$request->product_department;
         $product->product_class=$request->product_class;
-        $product->product_name=$request->product_name;
         $product->model=$request->model;
+        $product->product_name=$request->product_name;
         $product->additional_text=$request->additional_text;
         $product->product_type=$request->product_type;
         $product->branding=$request->branding;
@@ -86,9 +99,15 @@ class PaperNabkinsController extends Controller
                     'file'=>$fileName,
                     'extenstion'=>$file->getClientOriginalExtension()
                 ]);
+                Storage::put('public/pdf/invoice.pdf', $file->output());
             }
         }
 
+        // $pdf = PDF::loadView('pdf.invoice', $data);
+
+        // Storage::put('public/pdf/invoice.pdf', $file->output());
+
+        // return $pdf->download('invoice.pdf');
         // dd($request);
         // $url = "http://www.google.co.in/intl/en_com/images/srpr/logo1w.png";
         // $contents = file_get_contents($url);
@@ -97,28 +116,33 @@ class PaperNabkinsController extends Controller
 
         // phase 2 Completed
 
-        // phase 3 paperNabkins Saving
-        $paperNabkins->product_id=$product->id;
-        $paperNabkins->width=$request->width;
-        $paperNabkins->height=$request->height;
-        $paperNabkins->material_colors=$request->material_colors;
-        $paperNabkins->quantity_per_item=$request->quantity_per_item;
-        $paperNabkins->layer_number=$request->layer_number;
-        $paperNabkins->paper_thickness=$request->paper_thickness;
-        $paperNabkins->sheets_per_packet=$request->sheets_per_packet;
-        
-        $paperNabkins->save();
-        dd($paperNabkins);
-        // phase 3 Completed
+        // phase 3 corrugatedBox Saving
+        $corrugatedBox->product_id=$product->id;
+        $corrugatedBox->material_type=$request->material_type ;
+        $corrugatedBox->material_color=$request->material_color;
+        $corrugatedBox->box_width=$request->box_width;
+        $corrugatedBox->box_height=$request->box_height;
+        $corrugatedBox->box_length=$request->box_length;
+        $corrugatedBox->quantity_per_item=$request->quantity_per_item;
+        $corrugatedBox->flat_box_width=$request->flat_box_width;
+        $corrugatedBox->flat_box_height=$request->flat_box_height;
+        $corrugatedBox->solovan_layer=$request->solovan_layer;
+        $corrugatedBox->uv_layer=$request->uv_layer;
+        $corrugatedBox->coverage=$request->coverage;
+        $corrugatedBox->glue_points_number=$request->glue_points_number;
+        $corrugatedBox->merged_normal_layer=$request->merged_normal_layer;
+        $corrugatedBox->finger_print_color=$request->finger_print_color;
+        $corrugatedBox->save();
+        // dd($corrugatedBox);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PaperNabkins  $paperNabkins
+     * @param  \App\Models\CorrugatedBox  $corrugatedBox
      * @return \Illuminate\Http\Response
      */
-    public function show(PaperNabkins $paperNabkins)
+    public function show(CorrugatedBox $corrugatedBox)
     {
         //
     }
@@ -126,10 +150,10 @@ class PaperNabkinsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PaperNabkins  $paperNabkins
+     * @param  \App\Models\CorrugatedBox  $corrugatedBox
      * @return \Illuminate\Http\Response
      */
-    public function edit(PaperNabkins $paperNabkins)
+    public function edit(CorrugatedBox $corrugatedBox)
     {
         //
     }
@@ -138,10 +162,10 @@ class PaperNabkinsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PaperNabkins  $paperNabkins
+     * @param  \App\Models\CorrugatedBox  $corrugatedBox
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PaperNabkins $paperNabkins)
+    public function update(Request $request, CorrugatedBox $corrugatedBox)
     {
         //
     }
@@ -149,10 +173,10 @@ class PaperNabkinsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PaperNabkins  $paperNabkins
+     * @param  \App\Models\CorrugatedBox  $corrugatedBox
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PaperNabkins $paperNabkins)
+    public function destroy(CorrugatedBox $corrugatedBox)
     {
         //
     }
