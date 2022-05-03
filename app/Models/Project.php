@@ -5,6 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\CustomersQuotation;
+use App\Models\Customers;
+use App\Models\SupplierQuotation;
+use App\Models\Supplier;
+use App\Models\Product;
+
 class Project extends Model
 {
     use HasFactory;
@@ -31,4 +37,19 @@ class Project extends Model
             'supplier_quotation',
             'purchase_contract_reference',
     ];
+    public function product(){
+        return $this->hasOne(Product::class);
+    }
+    public function customer(){
+        return $this->hasOne(Customers::class);
+    }
+    public function supplier(){
+        return $this->hasMany(Supplier::class);
+    }
+    public function customerQuotation(){
+        return $this->hasMany(CustomersQuotation::class);
+    }
+    public function supplierQuotation(){
+        return $this->hasMany(SupplierQuotation::class);
+    }
 }

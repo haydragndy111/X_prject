@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\PlasticBag;
+use App\Models\File;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PlasticBagController extends Controller
@@ -35,7 +37,61 @@ class PlasticBagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $file=new File;
+        $product=new Product;
+        $plasticBag=new PlasticBag;
+        
+        // phase 1 Product Saving
+        $product->product_department=$request->product_department;
+        $product->product_class=$request->product_class;
+        $product->model="";
+        $product->product_name=$request->product_name;
+        $product->additional_text=$request->additional_text;
+        $product->product_type=$request->product_type;
+        $product->branding=$request->branding;
+        $product->save();
+        // $pid=$product->id;
+        // phase 1 Completed
+        
+
+        // phase 2 File saveing
+        if($request->has('files')){
+            foreach($request->file('files') as $file){
+                // dd('here');
+                $fileName = 'file-'.time().rand(1,1000).'.'.$file->getClientOriginalExtension();
+                $file->move('product_files',$fileName);
+                File::create([
+                    'product_id'=>$product->id,
+                    'file'=>$fileName,
+                    'extenstion'=>$file->getClientOriginalExtension()
+                ]);
+            }
+        }
+
+        // dd($request);
+        // $url = "http://www.google.co.in/intl/en_com/images/srpr/logo1w.png";
+        // $contents = file_get_contents($url);
+        // $name = substr($url, strrpos($url, '/') + 1);
+        // Storage::put($name, $contents);
+
+        // phase 2 Completed
+
+        // phase 3 plasticBag Saving
+        $plasticBag->product_id=$product->id;
+        
+        $plasticBag->material_type=$request->material_type;
+        $plasticBag->material_color=$request->material_color;
+        $plasticBag->bag_thickness=$request->bag_thickness;
+        $plasticBag->width=$request->width;
+        $plasticBag->height=$request->height;
+        $plasticBag->length=$request->length;
+        $plasticBag->weight=$request->weight;
+        $plasticBag->base_type=$request->base_type;
+        $plasticBag->quantity_per_tons=$request->quantity_per_tons;
+        $plasticBag->quantity_per_tons=$request->quantity_per_tons;
+        $plasticBag->save();
+        // dd($plasticBag);
     }
 
     /**

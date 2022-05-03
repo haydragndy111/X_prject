@@ -34,9 +34,6 @@ class HomeController extends Controller
         $mytime = Carbon::now();
         $currentDate=$mytime->format('d-m-Y');;
 
-        $pend=DB::select('select count(status) as state from customers where status="pending"');
-        $success=DB::select('select count(status) as state from customers where status="success"');
-        $failed=DB::select('select count(status) as state from customers where status="failed"');
         $marginPer=DB::select('select round(sum(sp)/sum(pp),4)*100 as marginPer , round(sum(sp)/sum(pp),4) as margin , created_at  from projects where  status="success" group by created_at');
         $earn=DB::select('select sum(sp) as sp ,sum(pp) as pp  from projects where status="success"');
         $prouductPending=DB::select('select count(*) as count  from projects where status="pending"');
@@ -54,6 +51,7 @@ class HomeController extends Controller
     {
         $customers=Customers::all();
         $suppliers=Supplier::all();
+        // dd($customers);
         return view ('home.index',compact('customers','suppliers'));
     }
 

@@ -79,12 +79,12 @@
 						<div class="card overflow-hidden sales-card bg-warning-gradient">
 							<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 								<div class="">
-									<h6 class="mb-3 tx-12 text-white">@lang('lang.Products') @lang('lang.Failed')</h6>
+									<h6 class="mb-3 tx-12 text-white">@lang('lang.Total CoGS') </h6>
 								</div>
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
 										<div class="">
-											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{$prouductFailed[0]->count}}</h4>
+											<h4 class="tx-20 font-weight-bold mb-1 text-white">${{$earn[0]->pp}}</h4>
 											<!-- <p class="mb-0 tx-12 text-white op-7">@lang('lang.Compared to last week')</p> -->
 										</div>
 										<span class="float-right my-auto mr-auto">
@@ -101,7 +101,7 @@
 						<div class="card overflow-hidden sales-card bg-success-gradient">
 							<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 								<div class="">
-									<h6 class="mb-3 tx-12 text-white">@lang('lang.TOTAL EARNINGS')</h6>
+									<h6 class="mb-3 tx-12 text-white">@lang('lang.Total Revenues')</h6>
 								</div>
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
@@ -119,6 +119,7 @@
 							<span id="compositeline3" class="pt-1">5,10,5,20,22,12,15,18,20,15,8,12,22,5,10,12,22,15,16,10</span>
 						</div>
 					</div>
+
 	
 				</div>
 				<!-- row closed -->
@@ -162,8 +163,8 @@
 									<thead>
 										<tr>
 											<th class="wd-lg-25p">@lang('lang.Date')</th>
-											<th class="wd-lg-25p tx-right">Margin</th>
-											<th class="wd-lg-25p tx-right">Margin %</th>
+											<th class="wd-lg-25p tx-right">@lang('lang.Margin')</th>
+											<th class="wd-lg-25p tx-right">@lang('lang.Margin') %</th>
 										</tr>
 									</thead>
 									<tbody>

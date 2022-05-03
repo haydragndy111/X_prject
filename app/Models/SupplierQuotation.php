@@ -5,6 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Supplier;
+use App\Models\File;
+use App\Models\Project;
+
 class SupplierQuotation extends Model
 {
     use HasFactory;
@@ -28,7 +32,13 @@ class SupplierQuotation extends Model
         'supplier_comment',
         'supplier_invoice',
     ];
-    public function sosBag(){
-        return $this->belongsTo(SosWithoutHandleBag::class);
+    public function file(){
+        return $this->hasMany(File::class);
+    }
+    public function project(){
+        return $this->belongsTo(Project::class);
+    }
+    public function supplier(){
+        return $this->hasOne(Supplier::class);
     }
 }

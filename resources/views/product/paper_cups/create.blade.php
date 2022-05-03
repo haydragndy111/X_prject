@@ -144,8 +144,8 @@
                                 </select>
                             </div>
                             <div class="col">
-                                <label for="material_color" class="control-label">@lang('lang.Material Colors')</label>
-                                <select name="material_color" class="form-control">
+                                <label for="material_colors" class="control-label">@lang('lang.Material Colors')</label>
+                                <select name="material_colors" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="white">@lang('lang.White')</option>
@@ -178,12 +178,12 @@
                             </div>
                             
                             <div class="col">
-                                <label for="uom" class="control-label">UOM</label>
+                                <label for="uom" class="control-label">@lang('lang.UOM')</label>
                                 <select name="uom" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
-                                    <option value="pcs">Pcs</option>
-                                    <option value="ctn">Ctn</option>
+                                    <option value="Pcs">Pcs</option>
+                                    <option value="Ctn">Ctn</option>
                                 </select>
                             </div>
                         </div>
@@ -192,20 +192,20 @@
                         {{-- 7 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="size">@lang('lang.Size')</label>
-                                <input type="varchar" name="size" placeholder="size" class="form-control">
-                            </div>
-                            <div class="col">
                                 <label for="thickness">@lang('lang.Thickness')</label>
-                                <input type="double" name="thickness" placeholder="thickness" class="form-control">
+                                <input type="float" name="thickness" placeholder="thickness" class="form-control">
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col">
                                 <label for="capacity">@lang('lang.Capacity')</label>
-                                <input type="number" name="capacity" placeholder="size" class="form-control">
+                                <select name="capacity" class="form-control">
+                                    <!--placeholder-->
+                                    <option value="" selected disabled>...</option>
+                                    <option value="ml">ml</option>
+                                    <option value="Oz">Oz</option>
+                                </select>
                             </div>
                         </div>
+
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary">@lang('lang.Create')</button>
                         </div>

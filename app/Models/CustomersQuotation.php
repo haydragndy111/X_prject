@@ -5,6 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Customers;
+use App\Models\File;
+use App\Models\Project;
+
 class CustomersQuotation extends Model
 {
     use HasFactory;
@@ -32,4 +36,13 @@ class CustomersQuotation extends Model
             'signed_customer_document',
             'availabe_design',
     ];
+    public function file(){
+        return $this->hasMany(File::class);
+    }
+    public function project(){
+        return $this->belongsTo(Project::class);
+    }
+    public function customer(){
+        return $this->hasOne(Customers::class);
+    }
 }

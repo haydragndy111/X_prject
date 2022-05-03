@@ -5,6 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\SupplierQuotation;
+use App\Models\File;
+use App\Models\Project;
+
 class Supplier extends Model
 {
     use HasFactory;
@@ -40,4 +44,13 @@ class Supplier extends Model
         'office_Location',
         'supplier_type'
     ];
+    public function file(){
+        return $this->hasMany(File::class);
+    }
+    public function project(){
+        return $this->belongsTo(Project::class);
+    }
+    public function supplierQuotation(){
+        return $this->hasOne(SupplierQuotation::class);
+    }
 }

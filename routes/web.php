@@ -18,11 +18,7 @@ Route::get('/', function () {
 });
 
 
-//chartjs Route
-// Route::get("stock/add", [App\Http\Controllers\StockController::class, 'create']);
-// Route::post("stock/add", [App\Http\Controllers\StockController::class, 'store']);
-// Route::get("stocks", [App\Http\Controllers\StockController::class, 'index']);
-// Route::get("stock/chart", [App\Http\Controllers\StockController::class, 'chart']);
+Route::get("marginUser-of-product/{id}", [App\Http\Controllers\MarginUerController::class, 'marginUserOfProduct'])->name('marginUserOfProduct');
 
 
 Route::get("status/chart", [App\Http\Controllers\StockController::class, 'statusChart']);
@@ -65,9 +61,16 @@ Route::group(['prefix' => 'home'], function () {
 
 Route::resource('product', App\Http\Controllers\ProductController::class);
 Route::post('product/create2', [App\Http\Controllers\ProductController::class, 'create2'])->name('product.create2');
-Route::resource('product/PaperCup', App\Http\Controllers\PaperCupController::class);
-Route::resource('product/PlasticCups', App\Http\Controllers\PlasticCupsController::class);
 Route::resource('product/PaperBox', App\Http\Controllers\PaperBoxController::class);
+Route::resource('product/PaperCup', App\Http\Controllers\PaperCupController::class);
+Route::resource('product/PaperWrap', App\Http\Controllers\PaperWrapController::class);
+Route::resource('product/PaperNabkins', App\Http\Controllers\PaperNabkinsController::class);
+Route::resource('product/PlasticCups', App\Http\Controllers\PlasticCupsController::class);
+Route::resource('product/HandlePaperBag', App\Http\Controllers\HandlePaperBagController::class);
+Route::resource('product/SosWithoutHandleBag', App\Http\Controllers\SosWithoutHandleBagController::class);
+Route::resource('product/PlasticBag', App\Http\Controllers\PlasticBagController::class);
+Route::resource('product/SachelBag', App\Http\Controllers\SachelBagController::class);
+Route::resource('product/CorrugatedBox', App\Http\Controllers\CorrugatedBoxController::class);
 Route::resource('process', App\Http\Controllers\ProcessController::class);
 Route::resource('supplier', App\Http\Controllers\SupplierController::class);
 Route::resource('customer', App\Http\Controllers\CustomersController::class);

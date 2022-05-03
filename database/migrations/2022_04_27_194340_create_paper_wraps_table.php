@@ -18,10 +18,9 @@ class CreatePaperWrapsTable extends Migration
             $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
             $table->decimal('width',5,2);
             $table->decimal('height',5,2);
-            $table->string('metrial_type');
-            $table->string('metrial_color');
-            $table->string('paper_color');
-            $table->string('paper_thickness');
+            $table->string('material_type');
+            $table->string('material_colors');
+            $table->decimal('paper_thickness',5,2);
             $table->integer('quantity_per_item');
             $table->decimal('item_weight');
             $table->string('pe_layer');

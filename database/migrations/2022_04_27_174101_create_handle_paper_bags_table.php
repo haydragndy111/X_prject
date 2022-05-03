@@ -16,16 +16,14 @@ class CreateHandlePaperBagsTable extends Migration
         Schema::create('handle_paper_bags', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('material_type');
             $table->string('material_colors');
             $table->decimal('paper_thickness',5,2);
-            $table->string('handle_model');
             $table->decimal('base_width',5,2);
-            $table->decimal('base_height');
+            $table->decimal('base_height',5,2);
             $table->string('print_type');
             $table->string('effects');
-            $table->integer('quantity_per_item');
-            $table->integer('quantity_per_tons');
+            $table->integer('quantity_per_item')->nullable();
+            $table->integer('quantity_per_tons')->nullable();
             $table->timestamps();
         });
     }

@@ -18,8 +18,7 @@ class CreatePaperNabkinsTable extends Migration
             $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
             $table->decimal('width',5,2);
             $table->decimal('height',5,2);
-            $table->string('metrial_color');
-            $table->string('paper_color');
+            $table->string('matrial_colors');
             $table->integer('layer_number');
             $table->decimal('paper_thickness',5,2);
             $table->integer('quantity_per_item');

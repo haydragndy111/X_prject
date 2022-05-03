@@ -25,16 +25,14 @@
                                 <option value="">...</option>
                                 <option value="paper_boxes">@lang('lang.Paper Box')</option>
                                 <option value="paper_cups">@lang('lang.Paper cup')</option>
+                                <option value="paper_wraps">@lang('lang.Paper Wrap') </option>
+                                <option value="paper_nabkins">@lang('lang.Paper Knabkins')</option>
+                                <option value="plastic_cups">@lang('lang.Plastic Cup') </option>
                                 <option value="handle_paper_bags">@lang('lang.Paper Bag With Handle')</option>
                                 <option value="sos_without_handle_bags">@lang('lang.SOS Bag Without Handle')</option>
-                                <option value="sachel_bag">@lang('lang.Sachel Bags')</option>
-                                <option value="paper_wraps">@lang('lang.Paper Wrap')</option>
-                                <option value="paper_nabkins">@lang('lang.Paper Knabkins')</option>
-                                <option value="plastic_cups">@lang('lang.Plastic Cup')</option>
                                 <option value="plastic_bags">@lang('lang.Plastic Bag')</option>
+                                <option value="sachel_bag">@lang('lang.Sachal Bag')</option>
                                 <option value="corrugated_boxes">@lang('lang.corrugated Box')</option>
-                                <option value="sachal_bags">@lang('lang.Sachal Bag')</option>
-                                <option value="sos_without_handle_bags">@lang('lang.SOS Without Handle Bag')</option>
                             </select>
                             <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">@lang('lang.Add New Product') </button>
                         </form>
@@ -97,7 +95,7 @@
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->email}}</td>
                                     <td>
-                                        <a href="">
+                                        <a href="{{route('marginUserOfProduct',$item->id)}}">
                                             <button class="btn btn-primary">@lang('lang.view')</button>
                                         </a>
                                     </td>
