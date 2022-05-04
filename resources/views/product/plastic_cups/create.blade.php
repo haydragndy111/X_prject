@@ -34,14 +34,14 @@
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{route('PlasticCups.store')}}" method="POST" enctype="multipart/form-data" autocomplete="off">
+                    <form action="{{route('PaperCup.store')}}" method="POST" enctype="multipart/form-data" autocomplete="off">
                         @csrf
                         {{-- 1 --}}
                         <div class="row">
                             <div class="col">
                                 <label for="product_department" class="control-label">Product Department</label>
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <select name="product_department" class="form-control">
+                                <select required name="product_department" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Packaging">Packaging</option>
                                     <option value="Design Service">Design Service</option>
@@ -52,7 +52,7 @@
                             <div class="col">
                                 <label for="product_name" class="control-label">Product Name</label>
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <select name="product_name" class="form-control">
+                                <select required name="product_name" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="paper_cup_single_wall">Paper Cup Single Wall</option>
                                     <option value="paper_cup_double_wall">Paper Cup Double Wall</option>
@@ -68,7 +68,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="model" class="control-label">Model</label>
-                                <select name="model" class="form-control">
+                                <select required name="model" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Classic">Classic</option>
@@ -79,7 +79,7 @@
                             </div>
                             <div class="col">
                                 <label for="length">Length</label>
-                                <input type="decimal" name="length" placeholder="Length" class="form-control">
+                                <input required type="decimal" name="length" placeholder="Length" class="form-control">
                             </div>
                             
                         </div>
@@ -89,18 +89,18 @@
                         <div class="row">
                             <div class="col">
                                 <label for="width">Width</label>
-                                <input type="decimal" name="width" placeholder="width" class="form-control">
+                                <input required type="decimal" name="width" placeholder="width" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="height">Height</label>
-                                <input type="decimal" name="height" placeholder="height" class="form-control">
+                                <input required type="decimal" name="height" placeholder="height" class="form-control">
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col">
                                 <label for="product_type" class="control-label">Product Type</label>
-                                <select name="product_type" class="form-control">
+                                <select required name="product_type" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Customied">Customied</option>
                                     <option value="Standard">Standard</option>
@@ -108,7 +108,7 @@
                             </div>
                             <div class="col">
                                 <label for="branding" class="control-label">Branding</label>
-                                <select name="branding" class="form-control">
+                                <select required name="branding" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Printing">Printing</option>
                                     <option value="Not-Printing">Not-Printing</option>
@@ -119,7 +119,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="additional_text">Additional Text</label>
-                                <textarea class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
+                                <textarea required class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
                             </div>
                         </div>
                         {{-- 8 --}}
@@ -128,7 +128,7 @@
                                 <p class="text-danger">Upload Only ( pdf, jpeg , png ) files</p>
                                 <h5 class="card-title">Files</h5>
                                 <div class="col-sm-12 col-md-12">
-                                    <input type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
+                                    <input required type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
                                 </div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="material_type" class="control-label">Material Type</label>
-                                <select name="material_type" class="form-control">
+                                <select required name="material_type" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="PET">PET</option>
@@ -148,7 +148,7 @@
                             </div>
                             <div class="col">
                                 <label for="material_color" class="control-label">Material Colors</label>
-                                <select name="material_color" class="form-control">
+                                <select required name="material_color" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Clear">Clear</option>
@@ -161,7 +161,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="quantity_per_item">Quantity</label>
-                                <input type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
+                                <input required type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
                             </div>
                             
                         </div>
@@ -170,7 +170,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="effets" class="control-label">Effects</label>
-                                <select name="effects[]" multiple='multiple' class="form-control">
+                                <select required name="effects[]" multiple='multiple' class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="SPOT UV">SPOT UV</option>
                                 </select>

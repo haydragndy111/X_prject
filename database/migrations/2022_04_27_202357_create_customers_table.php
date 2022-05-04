@@ -16,7 +16,6 @@ class CreateCustomersTable extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('file_id')->references('id')->on('files')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('customer_reference');
             $table->string('customer_organization_name');
             $table->string('customer_brand_name');
             $table->string('customer_contact_name');

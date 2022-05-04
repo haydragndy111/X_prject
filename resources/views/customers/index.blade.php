@@ -28,15 +28,17 @@
                     <table id="example" class="table key-buttons text-md-nowrap">
                         <thead>
                             <tr>
-                                <th class="border-bottom-0">Name</th>
+                                <th class="border-bottom-0">Customer Reference</th>
+                                <th class="border-bottom-0">Customer Organization Name</th>
                                 <th class="border-bottom-0">Email</th>
+                                <th class="border-bottom-0">Status</th>
                                 <th class="border-bottom-0">Action</th>
-                                <th class="border-bottom-0">Function</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($customers as $item)
                                 <tr>
+                                    <td>{{$item->id}}</td>
                                     <td>{{$item->customer_organization_name}}</td>
                                     <td>{{$item->email}}</td>
                                     <td>

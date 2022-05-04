@@ -42,7 +42,7 @@
                             <div class="col">
                                 <label for="product_department" class="control-label">Product Department</label>
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <select name="product_department" class="form-control">
+                                <select required name="product_department" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Packaging">Packaging</option>
                                 </select>
@@ -50,7 +50,7 @@
                             <input type="text" name="product_class" value="{{$type}}" class="form-control" hidden>
                             <div class="col">
                                 <label for="product_name" class="control-label">Product Name</label>
-                                <input type="text" class="form-control" id="inputName" name="product_name">
+                                <input required type="text" class="form-control" id="inputName" name="product_name">
                                 
                             </div>
                         </div>
@@ -59,15 +59,15 @@
                         <div class="row">
                             <div class="col">
                                 <label for="length">Length</label>
-                                <input type="float" name="length" placeholder="Length" class="form-control">
+                                <input required type="float" name="length" placeholder="Length" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="width">Width</label>
-                                <input type="float" name="width" placeholder="width" class="form-control">
+                                <input required type="float" name="width" placeholder="width" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="height">Height</label>
-                                <input type="float" name="height" placeholder="height" class="form-control">
+                                <input required type="float" name="height" placeholder="height" class="form-control">
                             </div>
                             
                         </div>
@@ -94,7 +94,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="additional_text">Additional Text</label>
-                                <textarea class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
+                                <textarea required class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
                             </div>
                         </div>
                         {{-- 8 --}}
@@ -103,7 +103,7 @@
                                 <p class="text-danger">Upload Only ( pdf, jpeg , png ) files</p>
                                 <h5 class="card-title">Files</h5>
                                 <div class="col-sm-12 col-md-12">
-                                    <input type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
+                                    <input required type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
                                 </div>
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                             </div>
                             <div class="col">
                                 <label for="quantity_per_item">Quantity</label>
-                                <input type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
+                                <input required type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
                             </div>
                             
                         </div>
@@ -159,11 +159,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="single_box_height">Single Box Width</label>
-                                <input type="float" name="single_box_height" placeholder="number" class="form-control">
+                                <input required type="float" name="single_box_height" placeholder="number" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="single_box_width">Single Box Width</label>
-                                <input type="float" name="single_box_width" placeholder="number" class="form-control">
+                                <input required type="float" name="single_box_width" placeholder="number" class="form-control">
                             </div>
                             
                         </div>
@@ -212,7 +212,7 @@
                             </div>
                             <div class="col">
                                 <label for="finger_print_color">Finger Print Color</label>
-                                <input type="float" name="finger_print_color" placeholder="thickness" class="form-control">
+                                <input required type="float" name="finger_print_color" placeholder="thickness" class="form-control">
                             </div>
 
                         </div>
@@ -225,7 +225,7 @@
                             </div>
                             <div class="col">
                                 <label for="glue_points_number">Glue Points Count</label>
-                                <select name="glue_points_number" class="form-control">
+                                <select required name="glue_points_number" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="1">1</option>

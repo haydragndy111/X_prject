@@ -38,8 +38,13 @@
                         @csrf
                         {{-- 1 --}}
                         <div class="row">
+                            {{-- <div class="col">
+                                <label for="customer_id" class="control-label">Customer id</label>
+                                <input type="text" class="form-control" id="inputName" name="product_name">
+                                <input type="text" name="customer_id" class="form-control" placeholder="id">
+                            </div> --}}
                             <div class="col">
-                                <label for="customer_organization_name" class="control-label">Supplier Organization Name</label>
+                                <label for="customer_organization_name" class="control-label">Customer Organization Name</label>
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
                                 <input type="text" name="customer_organization_name" class="form-control" placeholder="ORG Name">
                             </div>
@@ -52,21 +57,39 @@
                         {{-- 2 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="customer_contact_name" class="control-label">Supplier Contact Name</label>
+                                <label for="customer_contact_name" class="control-label">Customer Contact Name</label>
                                 <input type="text" name="customer_contact_name" class="form-control" placeholder="Contact Name">
                             </div>
                             <div class="col">
-                                <label for="customer_contact_name2" class="control-label">Customer Contact Whatsapp</label>
-                                <input type="text" name="customer_contact_name2" class="form-control" placeholder="Whatsapp Link">
+                                <label for="customer_contact_name" class="control-label">Customer Contact whatsapp</label>
+                                <input type="text" name="customer_contact_whatsaap" class="form-control" placeholder="Contact Name">
                             </div>
+                            <div class="col">
+                                <label for="customer_contact_name" class="control-label">Customer Contact number</label>
+                                <input type="text" name="customer_contact_number" class="form-control" placeholder="Contact Name">
+                            </div>
+                            <div class="col">
+                                <label for="customer_contact_name" class="control-label">Customer Contact number2</label>
+                                <input type="text" name="customer_contact_number2" class="form-control" placeholder="Contact Name">
+                            </div>
+                            
+                            
                         </div>
                         <br>
                         {{-- 3 --}}
                         <div class="row">
                             <div class="col">
                                 <label for="social_media_accouts" class="control-label">Email</label>
-                                <input type="text" name="social_media_accouts" class="form-control" placeholder="Accounts Links">
+                                <input type="text" name="email" class="form-control" placeholder="Account">
                             </div>
+                            <div class="col">
+                                <label for="social_media_accouts" class="control-label">website</label>
+                                <input type="text" name="website" class="form-control" placeholder="Account">
+                            </div>
+                            <div class="col">
+                                <label for="social_media_accouts" class="control-label">social media accounts</label>
+                                <input type="text" name="social_media_accounts" class="form-control" placeholder="Account">
+                            </div>                            
                             <div class="col">
                                 <label for="vat_number" class="control-label">VAT Number</label>
                                 <input type="text" name="vat_number" class="form-control" placeholder=VAT">
@@ -77,7 +100,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="coutnry" class="control-label">Country</label>
-                                <input type="text" name="coutnry" class="form-control" placeholder=Country">
+                                <input type="text" name="country" class="form-control" placeholder=Country">
+                            </div>
+                            <div class="col">
+                                <label for="coutnry" class="control-label">city</label>
+                                <input type="text" name="city" class="form-control" placeholder=Country">
                             </div>
                             <div class="col">
                                 <label for="district" class="control-label">District</label>
@@ -112,12 +139,12 @@
                         {{-- 7 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="customer_attatchment_C.R" class="control-label">Customer Attatchment C.R ? is this file?</label>
-                                <input type="text" name="customer_attatchment_C.R" class="form-control" placeholder="Secondary Number">
+                                <label for="customer_attachement_CR" class="control-label">Customer Attatchment C.R ? is this file?</label>
+                                <input type="text" name="customer_attachement_CR" class="form-control" placeholder="Secondary Number">
                             </div>
                             <div class="col">
-                                <label for="customer_VAT_certificate_link" class="control-label">Customer VAT Certificate Link</label>
-                                <input type="text" name="customer_VAT_certificate_link" class="form-control" placeholder="Link">
+                                <label for="customer_VAT_certificate" class="control-label">Customer VAT Certificate Link</label>
+                                <input type="text" name="customer_VAT_certificate" class="form-control" placeholder="Link">
                             </div>
                         </div>
                         <br>
@@ -131,24 +158,25 @@
                                 <label for="customer_product_designs" class="control-label">Customer Product Designs</label>
                                 <input type="text" name="customer_product_designs" class="form-control" placeholder="Link">
                             </div>
+                            
                         </div>
                         <br>
                         {{-- 9 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="customer_current_designs" class="control-label">Customer Current Designs</label>
-                                <input type="text" name="customer_current_designs" class="form-control" placeholder="Link">
+                                <label for="customer_current_products" class="control-label">Customer current Product</label>
+                                <input type="text" name="customer_current_products" class="form-control" placeholder="Link">
                             </div>
                             <div class="col">
                                 <label for="color_codes_pantone/CMYK" class="control-label">Customer Codes antone / CMYK</label>
-                                <input type="text" name="customer_product_design" class="form-control" placeholder="Link">
+                                <input type="text" name="color_codes_pantone" class="form-control" placeholder="Link">
                             </div>
                         </div>
                         <br>
                         {{-- 10 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="user_Comments" class="control-label">Customer Current Designs</label>
+                                <label for="user_Comments" class="control-label">Customer Comments</label>
                                 <textarea class="form-control" id="exampleTextarea" name="user_Comments" rows="3"></textarea>
                             </div>
                             <div class="col">
@@ -178,7 +206,7 @@
                         <br>
 
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="text" class="btn btn-primary">Create</button>
                         </div>
 
 

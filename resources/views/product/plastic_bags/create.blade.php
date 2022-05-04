@@ -41,7 +41,7 @@
                             <div class="col">
                                 <label for="product_department" class="control-label">Product Department</label>
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <select name="product_department" class="form-control">
+                                <select required name="product_department" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Packaging">Packaging</option>
                                 </select>
@@ -50,7 +50,7 @@
                             <div class="col">
                                 <label for="product_name" class="control-label">Product Name</label>
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <select name="product_name" class="form-control">
+                                <select required name="product_name" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Plastic Bag T-Shirt HDPE Grey">Plastic Bag T-Shirt HDPE Grey</option>
                                     <option value="Platsic Bag Punched out-LDPE Clear">Platsic Bag Punched out-LDPE Clear</option>
@@ -64,7 +64,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="model" class="control-label">Model</label>
-                                <select name="model" class="form-control">
+                                <select required name="model" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="T-Shirt">T-Shirt</option>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="col">
                                 <label for="bag_thickness">Bag Thickness</label>
-                                <input type="float" name="bag_thickness" placeholder="thickness" class="form-control">
+                                <input required type="float" name="bag_thickness" placeholder="thickness" class="form-control">
                             </div>
                             
                         </div>
@@ -86,7 +86,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="product_type" class="control-label">Product Type</label>
-                                <select name="product_type" class="form-control">
+                                <select required name="product_type" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Customied">Customied</option>
                                     <option value="Standard">Standard</option>
@@ -94,7 +94,7 @@
                             </div>
                             <div class="col">
                                 <label for="branding" class="control-label">Branding</label>
-                                <select name="branding" class="form-control">
+                                <select required name="branding" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Printing">Printing</option>
                                     <option value="Not-Printing">Not-Printing</option>
@@ -105,7 +105,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="additional_text">Additional Text</label>
-                                <textarea class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
+                                <textarea required class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
                             </div>
                         </div>
                         {{-- 8 --}}
@@ -114,7 +114,7 @@
                                 <p class="text-danger">Upload Only ( pdf, jpeg , png ) files</p>
                                 <h5 class="card-title">Files</h5>
                                 <div class="col-sm-12 col-md-12">
-                                    <input type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
+                                    <input required type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="material_type" class="control-label">Material Type</label>
-                                <select name="material_type" class="form-control">
+                                <select required name="material_type" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="HDPE">HDPE</option>
@@ -134,7 +134,7 @@
                             </div>
                             <div class="col">
                                 <label for="material_color" class="control-label">Material Colors</label>
-                                <select name="material_color" class="form-control">
+                                <select required name="material_color" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Clear">Clear</option>
@@ -144,7 +144,7 @@
                             </div>
                             <div class="col">
                                 <label for="base_type" class="control-label">Base Type</label>
-                                <select name="base_type" class="form-control">
+                                <select required name="base_type" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Base">Base</option>
@@ -157,11 +157,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="quantity_per_item">Quantity Per Item</label>
-                                <input type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
+                                <input required type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="quantity_per_tons">Quantity Per Tons</label>
-                                <input type="number" name="quantity_per_tons" placeholder="quantity" class="form-control">
+                                <input required type="number" name="quantity_per_tons" placeholder="quantity" class="form-control">
                             </div>
                             
                         </div>
@@ -171,19 +171,19 @@
                         <div class="row">
                             <div class="col">
                                 <label for="width">Width</label>
-                                <input type="float" name="width" placeholder="number" class="form-control">
+                                <input required type="float" name="width" placeholder="number" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="height">Height</label>
-                                <input type="float" name="height" placeholder="number" class="form-control">
+                                <input required type="float" name="height" placeholder="number" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="length">Length</label>
-                                <input type="float" name="length" placeholder="number" class="form-control">
+                                <input required type="float" name="length" placeholder="number" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="weight">ًWeight</label>
-                                <input type="float" name="weight" placeholder="number" class="form-control">
+                                <input required type="float" name="weight" placeholder="number" class="form-control">
                             </div>
                             
                         </div>

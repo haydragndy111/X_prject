@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CorrugatedBox;
-use App\Models\Product;
+use App\Models\HandlePaperBag;
 use App\Models\File;
+use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Storage;
 
-
-class CorrugatedBoxController extends Controller
+class HandlePaperBagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,41 +37,31 @@ class CorrugatedBoxController extends Controller
      */
     public function store(Request $request)
     {
-        $validater = Validator::make($request->all(),[
-        // $this->validate($request,[
+        $request->validate([
             // product section
             'product_department'=>'required',
-            // 'product_reference'=>'required|unique',
+            'product_reference'=>'required|unique',
             'product_class'=>'required',
-            'product_name'=>'required',
             'model='=>'required',
+            'product_name'=>'required',
             'additional_text'=>'required',
             'product_type'=>'required',
             'branding'=>'required',
+            'files.*'=>'required',
             // cat section
-            'material_type'=>'required',
-            'material_color'=>'required',
-            'box_width'=>'required',
-            'box_height'=>'required',
-            'box_length'=>'required',
-            'quantity_per_item'=>'required',
-            'flat_box_width'=>'required',
-            'flat_box_height'=>'required',
-            'solovan_layer'=>'required',
-            'uv_layer'=>'required',
-            'coverage'=>'required',
-            'glue_points_number'=>'required',
-            'merged_normal_layer'=>'required',
-            'finger_print_color'=>'required',
+            'material_colors'=>'required',
+            'paper_thickness'=>'required',
+            'print_type'=>'required',
+            'quantity_per_to'=>'required',
+            'quantity_per_to'=>'required',
+            'base_width'=>'required',
+            'base_height'=>'required',
+            'effects'=>'required',
         ]);
-        if($validater->fails()){
-            // dd('here');
-            return route('CorrugatedBox.create');
-        }
         // dd($request);
         $file=new File;
         $product=new Product;
-        $corrugatedBox=new CorrugatedBox;
+        $handlePaperBag=new HandlePaperBag;
         
         // phase 1 Product Saving
         $product->product_department=$request->product_department;
@@ -100,15 +87,9 @@ class CorrugatedBoxController extends Controller
                     'file'=>$fileName,
                     'extenstion'=>$file->getClientOriginalExtension()
                 ]);
-                Storage::put('public/pdf/invoice.pdf', $file->output());
             }
         }
 
-        // $pdf = PDF::loadView('pdf.invoice', $data);
-
-        // Storage::put('public/pdf/invoice.pdf', $file->output());
-
-        // return $pdf->download('invoice.pdf');
         // dd($request);
         // $url = "http://www.google.co.in/intl/en_com/images/srpr/logo1w.png";
         // $contents = file_get_contents($url);
@@ -117,33 +98,27 @@ class CorrugatedBoxController extends Controller
 
         // phase 2 Completed
 
-        // phase 3 corrugatedBox Saving
-        $corrugatedBox->product_id=$product->id;
-        $corrugatedBox->material_type=$request->material_type ;
-        $corrugatedBox->material_color=$request->material_color;
-        $corrugatedBox->box_width=$request->box_width;
-        $corrugatedBox->box_height=$request->box_height;
-        $corrugatedBox->box_length=$request->box_length;
-        $corrugatedBox->quantity_per_item=$request->quantity_per_item;
-        $corrugatedBox->flat_box_width=$request->flat_box_width;
-        $corrugatedBox->flat_box_height=$request->flat_box_height;
-        $corrugatedBox->solovan_layer=$request->solovan_layer;
-        $corrugatedBox->uv_layer=$request->uv_layer;
-        $corrugatedBox->coverage=$request->coverage;
-        $corrugatedBox->glue_points_number=$request->glue_points_number;
-        $corrugatedBox->merged_normal_layer=$request->merged_normal_layer;
-        $corrugatedBox->finger_print_color=$request->finger_print_color;
-        $corrugatedBox->save();
-        // dd($corrugatedBox);
+        // phase 3 handlePaperBag Saving
+        $handlePaperBag->product_id=$product->id;
+        $handlePaperBag->material_colors=$request->material_colors;
+        $handlePaperBag->paper_thickness=$request->paper_thickness;
+        $handlePaperBag->print_type=$request->print_type;
+        $handlePaperBag->quantity_per_tons=$request->quantity_per_tons;
+        $handlePaperBag->quantity_per_tons=$request->quantity_per_tons;
+        $handlePaperBag->base_width=$request->base_width;
+        $handlePaperBag->base_height=$request->base_height;
+        $handlePaperBag->effects=$request->effects[0];
+        $handlePaperBag->save();
+        // dd($handlePaperBag);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CorrugatedBox  $corrugatedBox
+     * @param  \App\Models\HandlePaperBag  $handlePaperBag
      * @return \Illuminate\Http\Response
      */
-    public function show(CorrugatedBox $corrugatedBox)
+    public function show(HandlePaperBag $handlePaperBag)
     {
         //
     }
@@ -151,10 +126,10 @@ class CorrugatedBoxController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CorrugatedBox  $corrugatedBox
+     * @param  \App\Models\HandlePaperBag  $handlePaperBag
      * @return \Illuminate\Http\Response
      */
-    public function edit(CorrugatedBox $corrugatedBox)
+    public function edit(HandlePaperBag $handlePaperBag)
     {
         //
     }
@@ -163,10 +138,10 @@ class CorrugatedBoxController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CorrugatedBox  $corrugatedBox
+     * @param  \App\Models\HandlePaperBag  $handlePaperBag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CorrugatedBox $corrugatedBox)
+    public function update(Request $request, HandlePaperBag $handlePaperBag)
     {
         //
     }
@@ -174,10 +149,10 @@ class CorrugatedBoxController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CorrugatedBox  $corrugatedBox
+     * @param  \App\Models\HandlePaperBag  $handlePaperBag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CorrugatedBox $corrugatedBox)
+    public function destroy(HandlePaperBag $handlePaperBag)
     {
         //
     }

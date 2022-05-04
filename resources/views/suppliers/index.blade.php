@@ -11,15 +11,16 @@
 @endsection
 @section('content')
 <div class="row row-sm">
-    <!--Cients Section-->
+ 
+    <!--Suppliers Section-->
     <div class="col-xl-12">
         <div class="card mg-b-20">
             <div class="card-header pb-0">
                 <div class="d-flex justify-content-between">
-                    <h4 class="card-title mg-b-0">Customers Table</h4>
+                    <h4 class="card-title mg-b-0">Suppliers Table</h4>
                     <i class="mdi mdi-dots-horizontal text-gray"></i>
-                    <a href="{{route('customer.create')}}">
-                        <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">Add New Customer </button>
+                    <a href="{{route('supplier.create')}}">
+                        <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">Add New Supplier </button>
                     </a>
                 </div>
             </div>
@@ -28,29 +29,27 @@
                     <table id="example" class="table key-buttons text-md-nowrap">
                         <thead>
                             <tr>
-                                <th class="border-bottom-0">Name</th>
-                                <th class="border-bottom-0">Email</th>
+                                <th class="border-bottom-0">Supplier Reference</th>
+                                <th class="border-bottom-0">Supplier Organiztion Name</th>
+                                <th class="border-bottom-0">Supplier Contect Name</th>
+                                <th class="border-bottom-0">Supplier Email</th>
+                                <th class="border-bottom-0">Supplier Contect Number</th>
                                 <th class="border-bottom-0">Action</th>
-                                <th class="border-bottom-0">Function</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($customers as $item)
+                            @foreach ($suppliers as $item)
                                 <tr>
-                                    <td>{{$item->customer_organization_name}}</td>
+                                    <td>{{$item->id}}</td>
+                                    <td>{{$item->supplier_organization_name}}</td>
+                                    <td>{{$item->supplier_contact_name}}</td>
                                     <td>{{$item->email}}</td>
+                                    <td>{{$item->supplier_contact_number}}</td>
                                     <td>
-                                        <a href="customer/{{ $item->customer_id }}/edit">
-                                            <button class="btn btn-primary">view</button>
+                                        <a href="{{route('supplier.show',$item->id)}}">
+                                            <button class="btn btn-primary">View</button>
                                         </a>
-                                    </td>
-                                    <td>
-                                        <!-- the delete function -->
-                                        <form action="customer/{{$item->customer_id}}" method="POST">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-sm btn-danger" title="Delete"><i class="las la-trash"></i></button>
-                                        </form>
+                                        
                                     </td>
                                 </tr>
                             @endforeach
@@ -60,7 +59,6 @@
             </div>
         </div>
     </div>
-    <!--/div-->
     <!--/div-->
 
 </div>

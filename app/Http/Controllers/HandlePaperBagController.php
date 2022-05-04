@@ -47,7 +47,7 @@ class HandlePaperBagController extends Controller
             'additional_text'=>'required',
             'product_type'=>'required',
             'branding'=>'required',
-            'files.*'=>'required',
+            // 'files.*'=>'required',
             // cat section
             'material_colors'=>'required',
             'paper_thickness'=>'required',
@@ -107,7 +107,12 @@ class HandlePaperBagController extends Controller
         $handlePaperBag->quantity_per_tons=$request->quantity_per_tons;
         $handlePaperBag->base_width=$request->base_width;
         $handlePaperBag->base_height=$request->base_height;
-        $handlePaperBag->effects=$request->effects[0];
+		$effect ="";
+        foreach($effects as $item){
+			$effect = $effect.', '.$item;
+		}
+		dd($effect);
+		$handlePaperBag->effects=$request->effect;
         $handlePaperBag->save();
         // dd($handlePaperBag);
     }

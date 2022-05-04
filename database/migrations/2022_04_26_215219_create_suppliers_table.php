@@ -16,14 +16,13 @@ class CreateSuppliersTable extends Migration
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('file_id')->references('id')->on('files')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('supplier_reference');
             $table->string('supplier_organization_name');
             $table->string('supplier_contact_name');
             $table->string('supplier_contact_position');
             $table->string('supplier_contact_number');
             $table->string('supplier_contact_whatsaap');
             $table->string('email');
-            $table->string('supplie_contact_name2');
+            $table->string('supplier_contact_name2');
             $table->string('supplier_contact2_position');
             $table->string('supplier_contact2_number');
             $table->string('supplier_catelouge');
@@ -39,7 +38,7 @@ class CreateSuppliersTable extends Migration
             $table->string('building_number');
             $table->string('secondary_number');
             $table->string('postal_code');
-            $table->string('supplier_attachment_CR');
+            $table->string('supplier_attatchment_CR');
             $table->string('supplier_vat_certificate');
             $table->string('user_comments');
             $table->string('supplier_IBAN1');

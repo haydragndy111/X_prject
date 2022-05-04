@@ -15,6 +15,9 @@ class CreateOthersTable extends Migration
     {
         Schema::create('others', function (Blueprint $table) {
             $table->id();
+            $table->string('material_color');
+            $table->string('material_type');
+            $table->string('quantity');
             $table->timestamps();
         });
     }

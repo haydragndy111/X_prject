@@ -17,7 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view ('product.index');
+        $products=Product::all();
+        return view ('product.index',compact('products'));
     }
 
     /**
@@ -70,6 +71,20 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        dd('here');
+        dd($product);
+        $product=Product::findOrfail($id);
+        $pid=$product->id;
+        $class=$product->product_class;
+        switch ($class) {
+            case 'paper_cup':
+                $paperCup=PaperCup::where('product_id','=',$pid);
+                return view('paper_cups.show');
+                break;
+            default:
+                # code...
+                break;
+        }
         return view ('product.edit');
     }
 

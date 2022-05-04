@@ -39,13 +39,13 @@
                         {{-- 1 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="supplier_Organization_Name" class="control-label">Supplier Organization Name</label>
-                                {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <input type="text" name="supplier_Organization_Name" class="form-control" placeholder="ORG Name">
+                                <label for="supplier_organization_name" class="control-label">Supplier Organization Name</label>
+                                {{-- <input required type="text" class="form-control" id="inputName" name="product_name"> --}}
+                                <input required type="text" name="supplier_organization_name" class="form-control" placeholder="ORG Name">
                             </div>
                             <div class="col">
-                                <label for="supplier_Type" class="control-label">Supplier Type</label>
-                                <select name="supplier_Type" class="form-control">
+                                <label for="supplier_type" class="control-label">Supplier Type</label>
+                                <select required name="supplier_type" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Manufacturer">Manufacturer</option>
@@ -57,26 +57,26 @@
                         <br>
                         <div class="row">
                             <div class="col">
-                                <label for="supplier_Contact_Name" class="control-label">Supplier Contact Name</label>
-                                <input type="text" name="supplier_Contact_Name" class="form-control" placeholder="Contact Name">
+                                <label for="supplier_contact_name" class="control-label">Supplier contact Name</label>
+                                <input required type="text" name="supplier_contact_name" class="form-control" placeholder="contact Name">
                             </div>
                             <div class="col">
-                                <label for="supplier_Contact_Name2" class="control-label">Supplier Contact Name 2</label>
-                                <input type="textsupplier_Contact_Number2" name="supplier_Contact_Name2" class="form-control" placeholder="Contact Name 2">
+                                <label for="supplier_contact_name2" class="control-label">Supplier contact Name 2</label>
+                                <input required type="text" name="supplier_contact_name2" class="form-control" placeholder="contact Name 2">
                             </div>
                         </div>
                         <br>
                         {{-- 2 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="supplier_Contact_Position" class="control-label">Supplier Contact Position</label>
-                                {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <input type="text" name="supplier_Contact_Position" class="form-control" placeholder="Contact Position">
+                                <label for="supplier_contact_position" class="control-label">Supplier contact position</label>
+                                {{-- <input required type="text" class="form-control" id="inputName" name="product_name"> --}}
+                                <input required type="text" name="supplier_contact_position" class="form-control" placeholder="contact position">
                             </div>
                             <div class="col">
-                                <label for="supplier_Contact_Position2" class="control-label">Supplier Contact Position 2</label>
-                                {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <input type="text" name="supplier_Contact_Position2" class="form-control" placeholder="ORG Name">
+                                <label for="supplier_contact2_position" class="control-label">Supplier contact position 2</label>
+                                {{-- <input required type="text" class="form-control" id="inputName" name="product_name"> --}}
+                                <input required type="text" name="supplier_contact2_position" class="form-control" placeholder="ORG Name">
                             </div>
                             
                         </div>
@@ -84,12 +84,12 @@
                         {{-- 3 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="supplier_Contact_Number" class="control-label">Supplier Contact Number</label>
-                                <input type="text" name="supplier_Contact_Number" class="form-control" placeholder="Contact Number">
+                                <label for="supplier_contact_number" class="control-label">Supplier contact Number</label>
+                                <input required type="text" name="supplier_contact_number" class="form-control" placeholder="contact Number">
                             </div>
                             <div class="col">
-                                <label for="supplier_Contact_Number2" class="control-label">Supplier Contact Number 2</label>
-                                <input type="text" name="supplier_Contact_Number2" class="form-control" placeholder="Contact Number 2">
+                                <label for="supplier_contact2_number" class="control-label">Supplier contact Number 2</label>
+                                <input required type="text" name="supplier_contact2_number" class="form-control" placeholder="contact Number 2">
                             </div>
                         </div>
                         <br>
@@ -97,47 +97,47 @@
                         <div class="row">
                             <div class="col">
                                 <label for="email" class="control-label">Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Contact Name 2">
+                                <input required type="email" name="email" class="form-control" placeholder="contact Name 2">
                             </div>
                             <div class="col">
-                                <label for="supplier_Contact_Whatsapp" class="control-label">Supplier Contact Whatsapp</label>
-                                <input type="text" name="supplier_Contact_Whatsapp" class="form-control" placeholder="Whatsapp">
+                                <label for="supplier_contact_whatsaap" class="control-label">Supplier contact Whatsapp</label>
+                                <input required type="text" name="supplier_contact_whatsaap" class="form-control" placeholder="Whatsapp">
                             </div>
                         </div>
                         <br>
                         {{-- 5 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="supplier_Catelouge" class="control-label">Supplier Cateloge</label>
-                                <input type="text" name="supplier_Catelouge" class="form-control" placeholder="Cateloge">
+                                <label for="supplier_catelouge" class="control-label">Supplier Cateloge</label>
+                                <input required type="text" name="supplier_catelouge" class="form-control" placeholder="Cateloge">
                             </div>
                             <div class="col">
-                                <label for="supplier_WebSite" class="control-label">Supplier WebSite</label>
-                                <input type="text" name="supplier_WebSite" class="form-control" placeholder="WebSite">
+                                <label for="supplier_webSite" class="control-label">Supplier WebSite</label>
+                                <input required type="text" name="supplier_webSite" class="form-control" placeholder="WebSite">
                             </div>
                         </div>
                         <br>
                         {{-- 6 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="supplier_Fixed_Quotation1" class="control-label">Supplier Fixed Quotation 1</label>
-                                <input type="text" name="supplier_Fixed_Quotation1" class="form-control" placeholder="Quotation 1">
+                                <label for="supplier_fixed_quotation1" class="control-label">Supplier fixed quotation 1</label>
+                                <input required type="text" name="supplier_fixed_quotation1" class="form-control" placeholder="quotation 1">
                             </div>
                             <div class="col">
-                                <label for="supplier_Fixed_Quotation2" class="control-label">Supplier Fixed Quotation 2</label>
-                                <input type="text" name="supplier_Fixed_Quotation2" class="form-control" placeholder="Quotation 2">
+                                <label for="supplier_fixed_quotation2" class="control-label">Supplier fixed quotation 2</label>
+                                <input required type="text" name="supplier_fixed_quotation2" class="form-control" placeholder="quotation 2">
                             </div>
                         </div>
                         <br>
                         {{-- 7 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="social_Media_Accounts" class="control-label">Social Media Accounts</label>
-                                <input type="text" name="social_Media_Accounts" class="form-control" placeholder="Accounts">
+                                <label for="social_media_accounts" class="control-label">Social Media Accounts</label>
+                                <input required type="text" name="social_media_accounts" class="form-control" placeholder="Accounts">
                             </div>
                             <div class="col">
-                                <label for="vat_Number" class="control-label">VAT Number</label>
-                                <input type="text" name="vat_Number" class="form-control" placeholder="VAT Number">
+                                <label for="vat_number" class="control-label">VAT Number</label>
+                                <input required type="text" name="vat_number" class="form-control" placeholder="VAT Number">
                             </div>
                         </div>
                         <br>
@@ -145,11 +145,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="country" class="control-label">Country</label>
-                                <input type="text" name="country" class="form-control" placeholder="Country">
+                                <input required type="text" name="country" class="form-control" placeholder="Country">
                             </div>
                             <div class="col">
                                 <label for="city" class="control-label">City</label>
-                                <input type="text" name="city" class="form-control" placeholder="City">
+                                <input required type="text" name="city" class="form-control" placeholder="City">
                             </div>
                         </div>
                         <br>
@@ -157,39 +157,39 @@
                         <div class="row">
                             <div class="col">
                                 <label for="district" class="control-label">District</label>
-                                <input type="text" name="district" class="form-control" placeholder="District">
+                                <input required type="text" name="district" class="form-control" placeholder="District">
                             </div>
                             <div class="col">
                                 <label for="street" class="control-label">Street</label>
-                                <input type="text" name="street" class="form-control" placeholder="Street">
+                                <input required type="text" name="street" class="form-control" placeholder="Street">
                             </div>
                             <div class="col">
-                                <label for="postal_Code" class="control-label">Postal Code</label>
-                                <input type="text" name="postal_Code" class="form-control" placeholder="Code">
-                            </div>
-                        </div>
-                        <br>
-                        {{-- 10 --}}
-                        <div class="row">
-                            <div class="col">
-                                <label for="building_Number" class="control-label">Building Number</label>
-                                <input type="text" name="building_Number" class="form-control" placeholder="Number">
-                            </div>
-                            <div class="col">
-                                <label for="secondary_Number" class="control-label">Secondary Number</label>
-                                <input type="text" name="secondary_Number" class="form-control" placeholder="Number">
+                                <label for="postal_code" class="control-label">Postal Code</label>
+                                <input required type="text" name="postal_code" class="form-control" placeholder="Code">
                             </div>
                         </div>
                         <br>
                         {{-- 10 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="supplier_Attatchment_CR" class="control-label">Supplier Attatchment C.R</label>
-                                <input type="text" name="supplier_Attatchment_CR" class="form-control" placeholder="Attatchment C.R">
+                                <label for="building_number" class="control-label">Building Number</label>
+                                <input required type="text" name="building_number" class="form-control" placeholder="Number">
                             </div>
                             <div class="col">
-                                <label for="supplier_VAT_Certificate" class="control-label">Suppier VAT Certificate</label>
-                                <input type="text" name="supplier_VAT_Certificate" class="form-control" placeholder="Number">
+                                <label for="secondary_number" class="control-label">Secondary Number</label>
+                                <input required type="text" name="secondary_number" class="form-control" placeholder="Number">
+                            </div>
+                        </div>
+                        <br>
+                        {{-- 10 --}}
+                        <div class="row">
+                            <div class="col">
+                                <label for="supplier_attatchment_CR" class="control-label">Supplier Attatchment C.R</label>
+                                <input required type="text" name="supplier_attatchment_CR" class="form-control" placeholder="Attatchment C.R">
+                            </div>
+                            <div class="col">
+                                <label for="supplier_VAT_certificate" class="control-label">Suppier VAT Certificate</label>
+                                <input required type="text" name="supplier_VAT_certificate" class="form-control" placeholder="Number">
                             </div>
                         </div>
                         <br>
@@ -197,31 +197,31 @@
                         <div class="row">
                             <div class="col">
                                 <label for="supplier_IBAN1" class="control-label">Supplier IBAN1</label>
-                                <input type="text" name="supplier_IBAN1" class="form-control" placeholder="IBAN1">
+                                <input required type="text" name="supplier_IBAN1" class="form-control" placeholder="IBAN1">
                             </div>
                             <div class="col">
                                 <label for="supplier_IBAN2" class="control-label">Supplier IBAN2</label>
-                                <input type="text" name="supplier_IBAN2" class="form-control" placeholder="IBAN2">
+                                <input required type="text" name="supplier_IBAN2" class="form-control" placeholder="IBAN2">
                             </div>
                         </div>
                         <br>
                         {{-- 12 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="factory_Location" class="control-label">Factory Location</label>
-                                <input type="text" name="factory_Location" class="form-control" placeholder="Location">
+                                <label for="factory_location" class="control-label">Factory Location</label>
+                                <input required type="text" name="factory_location" class="form-control" placeholder="Location">
                             </div>
                             <div class="col">
-                                <label for="office_Location" class="control-label">Supplier IBAN2</label>
-                                <input type="text" name="office_Location" class="form-control" placeholder="Location">
+                                <label for="office_location" class="control-label">Supplier IBAN2</label>
+                                <input required type="text" name="office_location" class="form-control" placeholder="Location">
                             </div>
                         </div>
                         <br>
                         {{-- 13 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="user_Comments" class="control-label">User Comments</label>
-                                <textarea class="form-control"name="user_Comments" rows="3"></textarea>
+                                <label for="user_comments" class="control-label">User Comments</label>
+                                <textarea class="form-control"name="user_comments" rows="3"></textarea>
                             </div>
                         </div>
 
