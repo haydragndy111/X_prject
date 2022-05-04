@@ -16,13 +16,25 @@
         <div class="card mg-b-20">
             <div class="card-header pb-0">
                 <div class="d-flex justify-content-between">
-                    <h4 class="card-title mg-b-0">Products Table</h4>
+                    <h4 class="card-title mg-b-0">@lang('lang.Products Table')</h4>
                     <i class="mdi mdi-dots-horizontal text-gray"></i>
                     <div class="col-4">
                         <form action="{{route('product.create2')}}" method="post">
                             @csrf
                             <select name="type" class="form-control SlectBox">
                                 <option value="">...</option>
+<<<<<<< HEAD
+                                <option value="paper_boxes">@lang('lang.Paper Box')</option>
+                                <option value="paper_cups">@lang('lang.Paper cup')</option>
+                                <option value="paper_wraps">@lang('lang.Paper Wrap') </option>
+                                <option value="paper_nabkins">@lang('lang.Paper Knabkins')</option>
+                                <option value="plastic_cups">@lang('lang.Plastic Cup') </option>
+                                <option value="handle_paper_bags">@lang('lang.Paper Bag With Handle')</option>
+                                <option value="sos_without_handle_bags">@lang('lang.SOS Bag Without Handle')</option>
+                                <option value="plastic_bags">@lang('lang.Plastic Bag')</option>
+                                <option value="sachel_bag">@lang('lang.Sachal Bag')</option>
+                                <option value="corrugated_boxes">@lang('lang.corrugated Box')</option>
+=======
                                 <option value="paper_boxes">Paper Box</option>
                                 <option value="paper_cups">Paper cup</option>
                                 <option value="paper_wraps">Paper Wrap</option>
@@ -52,8 +64,9 @@
                                 <option value="others.plastic_lid">Plastic Lid</option>
                                 <option value="others.paper_lid">Paper Lid</option>
                                 <option value="others.printing">Printing Cliché</option>
+>>>>>>> 8587b0b8ab27e4fb3873c50260e799fea2948a31
                             </select>
-                            <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">Add New Product </button>
+                            <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">@lang('lang.Add New Product') </button>
                         </form>
                     </div>
                 </div>
@@ -63,12 +76,12 @@
                     <table id="example" class="table key-buttons text-md-nowrap">
                         <thead>
                             <tr>
-                                <th class="border-bottom-0">Name</th>
-                                <th class="border-bottom-0">Category Type</th>
-                                <th class="border-bottom-0">attatchment</th>
-                                <th class="border-bottom-0">Print Colors</th>
-                                <th class="border-bottom-0">Design</th>
-                                <th class="border-bottom-0">price</th>
+                                <th class="border-bottom-0">@lang('lang.Name')</th>
+                                <th class="border-bottom-0">@lang('lang.Category Type')</th>
+                                <th class="border-bottom-0">@lang('lang.attatchment')</th>
+                                <th class="border-bottom-0">@lang('lang.Print Colors')</th>
+                                <th class="border-bottom-0">@lang('lang.Design')</th>
+                                <th class="border-bottom-0">@lang('lang.price')</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -91,10 +104,10 @@
         <div class="card mg-b-20">
             <div class="card-header pb-0">
                 <div class="d-flex justify-content-between">
-                    <h4 class="card-title mg-b-0">Customers Table</h4>
+                    <h4 class="card-title mg-b-0">@lang('lang.CustomersTable')</h4>
                     <i class="mdi mdi-dots-horizontal text-gray"></i>
                     <a href="{{route('customer.create')}}">
-                        <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">Add New Customer </button>
+                        <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">@lang('lang.Add New Customer') </button>
                     </a>
                 </div>
             </div>
@@ -103,9 +116,9 @@
                     <table id="example" class="table key-buttons text-md-nowrap">
                         <thead>
                             <tr>
-                                <th class="border-bottom-0">Name</th>
-                                <th class="border-bottom-0">Email</th>
-                                <th class="border-bottom-0">action</th>
+                                <th class="border-bottom-0">@lang('lang.Name')</th>
+                                <th class="border-bottom-0">@lang('lang.Email')</th>
+                                <th class="border-bottom-0">@lang('lang.action')</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -114,8 +127,8 @@
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->email}}</td>
                                     <td>
-                                        <a href="">
-                                            <button class="btn btn-primary">view</button>
+                                        <a href="{{route('marginUserOfProduct',$item->id)}}">
+                                            <button class="btn btn-primary">@lang('lang.view')</button>
                                         </a>
                                     </td>
                                 </tr>
@@ -132,10 +145,10 @@
         <div class="card mg-b-20">
             <div class="card-header pb-0">
                 <div class="d-flex justify-content-between">
-                    <h4 class="card-title mg-b-0">Suppliers Table</h4>
+                    <h4 class="card-title mg-b-0">@lang('lang.Suppliers Table')</h4>
                     <i class="mdi mdi-dots-horizontal text-gray"></i>
                     <a href="{{route('supplier.create')}}">
-                        <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">Add New Supplier </button>
+                        <button class="modal-effect btn btn-primary btn-block" data-effect="effect-flip-vertical" data-toggle="modal" href="#modaldemo8">@lang('lang.Add New Supplier ')</button>
                     </a>
                 </div>
             </div>
@@ -144,9 +157,9 @@
                     <table id="example" class="table key-buttons text-md-nowrap">
                         <thead>
                             <tr>
-                                <th class="border-bottom-0">Name</th>
-                                <th class="border-bottom-0">Email</th>
-                                <th class="border-bottom-0">action</th>
+                                <th class="border-bottom-0">@lang('lang.Name')</th>
+                                <th class="border-bottom-0">@lang('lang.Email')</th>
+                                <th class="border-bottom-0">@lang('lang.action')</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -156,7 +169,7 @@
                                     <td>{{$item->email}}</td>
                                     <td>
                                         <a href="">
-                                            <button class="btn btn-primary">view</button>
+                                            <button class="btn btn-primary">@lang('lang.view')</button>
                                         </a>
                                     </td>
                                 </tr>

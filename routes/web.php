@@ -17,9 +17,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get("marginUser-of-product/{id}", [App\Http\Controllers\MarginUerController::class, 'marginUserOfProduct'])->name('marginUserOfProduct');
+
+
+Route::get("status/chart", [App\Http\Controllers\StockController::class, 'statusChart']);
+Route::get("marginPer", [App\Http\Controllers\StockController::class, 'marginPer']);
+
+Route::get("marginUser/chart", [App\Http\Controllers\StockController::class, 'marginUser']);
+
+
+
+
+//Localization Route
+Route::get("locale/{lange}", [App\Http\Controllers\LocalizationController::class, 'setLang']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+
 
 Route::get('/table',function(){
     return view ('table-data');

@@ -20,8 +20,8 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">procces</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                    Add a new one</span>
+                <h4 class="content-title mb-0 my-auto">@lang('lang.Processes')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+                  @lang('lang.Add a new one')</span>
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <label for="inputName" class="control-label"> Number </label>
+                                <label for="inputName" class="control-label"> @lang('lang.Number') </label>
                                 <input type="text" class="form-control" id="inputName" name="number"
                                     title=" " >
                             </div>
@@ -59,19 +59,19 @@
                         {{-- 2 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="inputName" class="control-label">Cust</label>
+                                <label for="inputName" class="control-label">@lang('lang.Cust')</label>
                                 <select name="custname" class="form-control SlectBox" onclick="console.log($(this).val())"
                                     onchange="console.log('change is firing')">
                                     <!--placeholder-->
-                                    <option value="" selected disabled>select</option>
+                                    <option value="" selected disabled>@lang('lang.select')</option>
 
                                 </select>
                             </div>
 
                             <div class="col">
-                                <label for="inputName" class="control-label">person</label>
+                                <label for="inputName" class="control-label">@lang('lang.person')</label>
                                 <select id="product" name="personname" class="form-control">
-									<option value="" selected disabled>select</option>
+									<option value="" selected disabled>@lang('lang.select')</option>
                                 </select>
                             </div>
 
@@ -88,11 +88,11 @@
 
                         <div class="row">
                             <div class="col">
-                                <label for="inputName" class="control-label">Product</label>
+                                <label for="inputName" class="control-label">@lang('lang.product')</label>
                                 <select name="product" class="form-control SlectBox" onclick="console.log($(this).val())"
                                     onchange="console.log('change is firing')">
                                     <!--placeholder-->
-                                    <option value="" selected disabled>select</option>
+                                    <option value="" selected disabled>@lang('lang.select')</option>
 									
                                 </select>
                             </div>
@@ -101,13 +101,13 @@
                         {{-- 5 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="exampleTextarea">Notes</label>
+                                <label for="exampleTextarea">@lang('lang.Notes')</label>
                                 <textarea class="form-control" id="exampleTextarea" name="note" rows="3"></textarea>
                             </div>
                         </div><br>
 
-                        <p class="text-danger">* ÕíÛÉ ÇáãÑÝÞ pdf, jpeg ,.jpg , png </p>
-                        <h5 class="card-title">Files</h5>
+                        <p class="text-danger">* @lang('lang.Upload Only') pdf, jpeg ,.jpg , png </p>
+                        <h5 class="card-title">@lang('lang.Files')</h5>
 
                         <div class="col-sm-12 col-md-12">
                             <input type="file" name="pic" class="dropify" accept=".pdf,.jpg, .png, image/jpeg, image/png"
@@ -115,7 +115,7 @@
                         </div><br>
 
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="submit" class="btn btn-primary">@lang('lang.Create')</button>
                         </div>
 
 

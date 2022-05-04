@@ -79,6 +79,7 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
+    
     public function destroy(Project $project)
     {
         //

@@ -42,6 +42,7 @@ class CreateProjectsTable extends Migration
             $table->string('reason_for_rejection');
             $table->string('supplier_quotation');
             $table->string('purchase_contract_reference');
+            $table->enum('status' , ["success" , "failed","pending" ])->default('failed');
             $table->timestamps();
         });
     }
