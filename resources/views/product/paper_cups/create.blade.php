@@ -50,15 +50,9 @@
                             </div>
                             <input type="text" name="product_class" value="{{$type}}" class="form-control" hidden>
                             <div class="col">
-<<<<<<< HEAD
-                                <label for="product_name" class="control-label">Product Name</label>
-                                {{-- <input required type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <select required name="product_name" class="form-control">
-=======
                                 <label for="product_name" class="control-label">@lang('lang.product') @lang('lang.Name')</label>
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
                                 <select name="product_name" class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                                     <option value="" selected disabled>...</option>
                                     <option value="paper_cup_single_wall">@lang('lang.Paper Cup Single Wall')</option>
                                     <option value="paper_cup_double_wall">@lang('lang.Paper Cup Double Wall')</option>
@@ -73,13 +67,8 @@
                         {{-- 2 --}}
                         <div class="row">
                             <div class="col">
-<<<<<<< HEAD
                                 <label for="model" class="control-label">Model</label>
                                 <select required name="model" class="form-control">
-=======
-                                <label for="model" class="control-label">@lang('lang.Model')</label>
-                                <select name="model" class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="single wall">@lang('lang.Single Wall')</option>
@@ -87,13 +76,8 @@
                                 </select>
                             </div>
                             <div class="col">
-<<<<<<< HEAD
                                 <label for="length">Length</label>
                                 <input required type="double" name="length" placeholder="Length" class="form-control">
-=======
-                                <label for="length">@lang('lang.Length')</label>
-                                <input type="double" name="length" placeholder="Length" class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                             </div>
                             
                         </div>
@@ -102,46 +86,27 @@
                         {{-- 4 --}}
                         <div class="row">
                             <div class="col">
-<<<<<<< HEAD
                                 <label for="width">Width</label>
                                 <input required type="double" name="width" placeholder="width" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="height">Height</label>
                                 <input required type="double" name="height" placeholder="height" class="form-control">
-=======
-                                <label for="width">@lang('lang.Width')</label>
-                                <input type="double" name="width" placeholder="width" class="form-control">
-                            </div>
-                            <div class="col">
-                                <label for="height">@lang('lang.Height')</label>
-                                <input type="double" name="height" placeholder="height" class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col">
-<<<<<<< HEAD
                                 <label for="product_type" class="control-label">Product Type</label>
                                 <select required name="product_type" class="form-control">
-=======
-                                <label for="product_type" class="control-label">@lang('lang.Product Type')</label>
-                                <select name="product_type" class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                                     <option value="" selected disabled>...</option>
                                     <option value="Customied">@lang('lang.Customied')</option>
                                     <option value="Standard">@lang('lang.Standard')</option>
                                 </select>
                             </div>
                             <div class="col">
-<<<<<<< HEAD
                                 <label for="branding" class="control-label">Branding</label>
                                 <select required name="branding" class="form-control">
-=======
-                                <label for="branding" class="control-label">@lang('lang.Branding')</label>
-                                <select name="branding" class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                                     <option value="" selected disabled>...</option>
                                     <option value="Printing">@lang('lang.Printing')</option>
                                     <option value="Not-Printing">@lang('lang.Not-Printing')</option>
@@ -171,26 +136,16 @@
                         {{-- 4 --}}
                         <div class="row">
                             <div class="col">
-<<<<<<< HEAD
                                 <label for="material_type" class="control-label">Material Type</label>
                                 <select required name="material_type" class="form-control">
-=======
-                                <label for="material_type" class="control-label">@lang('lang.Material Type')</label>
-                                <select name="material_type" class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="kraft">@lang('lang.Kraft')</option>
                                 </select>
                             </div>
                             <div class="col">
-<<<<<<< HEAD
                                 <label for="material_colors" class="control-label">Material Colors</label>
                                 <select required name="material_colors" class="form-control">
-=======
-                                <label for="material_colors" class="control-label">@lang('lang.Material Colors')</label>
-                                <select name="material_colors" class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="white">@lang('lang.White')</option>
@@ -202,13 +157,8 @@
                         {{-- 4 --}}
                         <div class="row">
                             <div class="col">
-<<<<<<< HEAD
                                 <label for="quantity_per_item">Quantity</label>
                                 <input required type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
-=======
-                                <label for="quantity_per_item">@lang('lang.Quantity')</label>
-                                <input type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                             </div>
                             <div class="col">
                                 <label for="finger_print_color">@lang('lang.Finger Print Color')</label>
@@ -227,29 +177,16 @@
                                 </select>
                             </div> --}}
                             <div class="col">
-<<<<<<< HEAD
                                 <label for="effets" class="control-label">Effects</label>
                                 <select required name="effects[]" multiple='multiple' class="form-control">
-=======
-                                <label for="effets" class="control-label">@lang('lang.Effects')</label>
-                                <select name="effects[]" multiple='multiple' class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                                     <option value="" selected disabled>...</option>
-                                    <option value="">
-                                        <input type="text" placeholder="input text">
-                                    </option>
                                     <option value="gold foil">@lang('lang.Gold Foil')</option>
                                     <option value="silver foil">@lang('lang.Silver Foil')</option>
                                 </select>
                             </div>
                             <div class="col">
-<<<<<<< HEAD
                                 <label for="uom" class="control-label">UOM</label>
                                 <select required name="uom" class="form-control">
-=======
-                                <label for="uom" class="control-label">@lang('lang.UOM')</label>
-                                <select name="uom" class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Pcs">Pcs</option>
@@ -262,21 +199,12 @@
                         {{-- 7 --}}
                         <div class="row">
                             <div class="col">
-<<<<<<< HEAD
                                 <label for="thickness">Thickness</label>
                                 <input required type="float" name="thickness" placeholder="thickness" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="capacity">Capacity</label>
                                 <select required name="capacity" class="form-control">
-=======
-                                <label for="thickness">@lang('lang.Thickness')</label>
-                                <input type="float" name="thickness" placeholder="thickness" class="form-control">
-                            </div>
-                            <div class="col">
-                                <label for="capacity">@lang('lang.Capacity')</label>
-                                <select name="capacity" class="form-control">
->>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="ml">ml</option>

@@ -30,9 +30,9 @@ class CreatePaperBoxesTable extends Migration
             $table->string('uv_layer');
             $table->string('coverage');
             $table->string('uom');
-            $table->varchar('capacity');
+            $table->string('capacity');
             $table->string('effects');
-            $table->interger('glue_points_number');
+            $table->integer('glue_points_number');
             $table->string('window_shape');
             $table->decimal('window_width',5,2);
             $table->decimal('window_height',5,2);

@@ -51,10 +51,8 @@ class OtherController extends Controller
         $product->product_type=$request->product_type;
         $product->branding=$request->branding;
         $product->save();
-        // $pid=$product->id;
         // phase 1 Completed
         
-
         // phase 2 File saveing
         if($request->has('files')){
             foreach($request->file('files') as $file){
@@ -68,6 +66,11 @@ class OtherController extends Controller
                 ]);
             }
         }
+        // phase 2 File completed
+        
+        // phase 3 Saved
+        
+        //
     }
 
     /**

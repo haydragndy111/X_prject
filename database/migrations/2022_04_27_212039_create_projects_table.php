@@ -20,7 +20,6 @@ class CreateProjectsTable extends Migration
             $table->foreignId('suppliers_id')->references('id')->on('suppliers')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('supplier_quotation_id')->references('id')->on('suppliers')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('customers_quotation_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('product_reference');
             $table->string('product');
             $table->string('description');
             $table->string('Qty');

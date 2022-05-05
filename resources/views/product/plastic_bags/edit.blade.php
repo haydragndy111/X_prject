@@ -20,8 +20,8 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">product / {{$type}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                    edit this product</span>
+                <h4 class="content-title mb-0 my-auto">@lang('lang.product') /{{ __('lang.' . $type) }}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+                    @lang('lang.Add a new one')</span>
             </div>
         </div>
     </div>
@@ -30,22 +30,21 @@
 @section('content')
     <!-- row -->
     <div class="row">
+
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{route('paperCup.update',$paperCup->id)}}" method="POST" enctype="multipart/form-data" autocomplete="off">
+                    <form action="{{route('PlasticBag.update',$plasticBag->id)}}" method="POST" enctype="multipart/form-data" autocomplete="off">
                         @method('PUT')
                         @csrf
                         {{-- 1 --}}
                         <div class="row">
                             <div class="col">
                                 <label for="product_department" class="control-label">Product Department</label>
-                                {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
+                                {{-- <input value="{{$plastcBag->}}"type="text" class="form-control" id="inputName" name="product_name"> --}}
                                 <select  name="product_department" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Packaging">Packaging</option>
-                                    <option value="Design Service">Design Service</option>
-                                    <option value="Logistics Service">Logistics Service</option>
                                 </select>
                             </div>
                             <input type="text" name="product_class" value="{{$type}}" class="form-control" hidden>
@@ -54,14 +53,12 @@
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
                                 <select  name="product_name" class="form-control">
                                     <option value="" selected disabled>...</option>
-                                    <option value="paper_cup_single_wall">Paper Cup Single Wall</option>
-                                    <option value="paper_cup_double_wall">Paper Cup Double Wall</option>
+                                    <option value="Plastic Bag T-Shirt HDPE Grey">Plastic Bag T-Shirt HDPE Grey</option>
+                                    <option value="Platsic Bag Punched out-LDPE Clear">Platsic Bag Punched out-LDPE Clear</option>
+                                    <option value="Plastic Bag With Handle HDPE Red">Plastic Bag With Handle HDPE Red</option>
+
                                 </select>
                             </div>
-                            {{-- <div class="col">
-                                <input class="form-control fc-datepicker" name="category_type" placeholder="YYYY-MM-DD"
-                                    type="text" value="{{$type}}">
-                            </div> --}}
                         </div>
                         <br>
                         {{-- 2 --}}
@@ -71,32 +68,21 @@
                                 <select  name="model" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
-                                    <option value="female" @if (old('gender') == 'female') selected="selected" @endif>female</option>
-                                    <option value="Classic">Classic</option>
-                                    <option value="U-Shaped">U-Shaped</option>
-                                    <option value="Sauce Cup">Sauce Cup</option>
-                                    <option value="IceCream Cup">IceCream Cup</option>
+                                    <option value="T-Shirt">T-Shirt</option>
+                                    <option value="Punched-Out">Punched-Out</option>
+                                    <option value="With Handle">With Handle</option>
+                                    <option value="Without Handle">Without Handle</option>
+                                    
                                 </select>
                             </div>
                             <div class="col">
-                                <label for="length">Length</label>
-                                <input value="{{$paperCup->length}}"  type="decimal" name="length" placeholder="Length" class="form-control">
+                                <label for="bag_thickness">Bag Thickness</label>
+                                <input value="{{$plastcBag->bag_thickness}}" type="float" name="bag_thickness" placeholder="thickness" class="form-control">
                             </div>
                             
                         </div>
                         {{-- 3 --}}
-                        <br>
-                        {{-- 4 --}}
-                        <div class="row">
-                            <div class="col">
-                                <label for="width">Width</label>
-                                <input value="{{$paperCup->width}}"  type="decimal" name="width" placeholder="width" class="form-control">
-                            </div>
-                            <div class="col">
-                                <label for="height">Height</label>
-                                <input value="{{$paperCup->height}}"  type="decimal" name="height" placeholder="height" class="form-control">
-                            </div>
-                        </div>
+                        
                         <br>
                         <div class="row">
                             <div class="col">
@@ -120,7 +106,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="additional_text">Additional Text</label>
-                                <textarea  class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
+                                <textarea value="{{$bag_thickness->additional_text}}" class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
                             </div>
                         </div>
                         {{-- 8 --}}
@@ -129,7 +115,7 @@
                                 <p class="text-danger">Upload Only ( pdf, jpeg , png ) files</p>
                                 <h5 class="card-title">Files</h5>
                                 <div class="col-sm-12 col-md-12">
-                                    <input value  type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
+                                    <input type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
                                 </div>
                             </div>
                         </div>
@@ -143,8 +129,8 @@
                                 <select  name="material_type" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
-                                    <option value="PET">PET</option>
-                                    <option value="PP">PP</option>
+                                    <option value="HDPE">HDPE</option>
+                                    <option value="LDPE">LDPE</option>
                                 </select>
                             </div>
                             <div class="col">
@@ -153,7 +139,17 @@
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Clear">Clear</option>
-                                    <option value="Black">Black</option>
+                                    <option value="Grey">Grey</option>
+                                    <option value="Red">Red</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="base_type" class="control-label">Base Type</label>
+                                <select  name="base_type" class="form-control">
+                                    <!--placeholder-->
+                                    <option value="" selected disabled>...</option>
+                                    <option value="Base">Base</option>
+                                    <option value="No Base">No Base</option>
                                 </select>
                             </div>
                         </div>
@@ -161,25 +157,44 @@
                         {{-- 4 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="quantity_per_item">Quantity</label>
-                                <input value="{{$paperCup->quantity_per_item}}  type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
+                                <label for="quantity_per_item">Quantity Per Item</label>
+                                <input value="{{$plastcBag->quantity_per_item}}" type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
                             </div>
-                            
-                        </div>
-                        <br>
-                        {{-- 5 --}}
-                        <div class="row">
                             <div class="col">
-                                <label for="effets" class="control-label">Effects</label>
-                                <select  name="effects[]" multiple='multiple' class="form-control">
-                                    <option value="" selected disabled>...</option>
-                                    <option value="SPOT UV">SPOT UV</option>
-                                </select>
+                                <label for="quantity_per_tons">Quantity Per Tons</label>
+                                <input value="{{$plastcBag->quantity_per_tons}}" type="number" name="quantity_per_tons" placeholder="quantity" class="form-control">
                             </div>
                             
                         </div>
+                        
                         <br>
                         {{-- 6 --}}
+                        <div class="row">
+                            <div class="col">
+                                <label for="width">Width</label>
+                                <input value="{{$plastcBag->width}}" type="float" name="width" placeholder="number" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="height">Height</label>
+                                <input value="{{$plastcBag->height}}" type="float" name="height" placeholder="number" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="length">Length</label>
+                                <input value="{{$plastcBag->plastcBag}}" type="float" name="length" placeholder="number" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="weight">ًWeight</label>
+                                <input value="{{$plastcBag->weight}}" type="float" name="weight" placeholder="number" class="form-control">
+                            </div>
+                            
+                        </div>
+                        {{-- 7 --}}
+                        <br>
+                        
+                        <div class="row">
+                            
+                        
+                        </div>
                         
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary">Create</button>

@@ -88,12 +88,12 @@
                                     <td>{{$item->product_type}}</td>
                                     <td>{{$item->branding}}</td>
                                     <td>
-                                        <a href="#">
+                                        <a href="{{route('product.destroy',$item->id)}}">
                                             <button class="btn btn-danger">Delete</button>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="#">
+                                        <a href="{{route('product.edit',$item->id)}}">
                                             <button class="modal-effect btn btn-primary btn-block">View</button>
                                         </a>
                                     </td>

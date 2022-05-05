@@ -20,8 +20,8 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">product / {{$type}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                    edit this product</span>
+                 <h4 class="content-title mb-0 my-auto">@lang('lang.product') /{{ __('lang.' . $type) }}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+                    @lang('lang.Add a new one')</span>
             </div>
         </div>
     </div>
@@ -30,10 +30,11 @@
 @section('content')
     <!-- row -->
     <div class="row">
+
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{route('paperCup.update',$paperCup->id)}}" method="POST" enctype="multipart/form-data" autocomplete="off">
+                    <form action="{{route('PaperNabkins.update',$paperNabkin->id)}}" method="POST" enctype="multipart/form-data" autocomplete="off">
                         @method('PUT')
                         @csrf
                         {{-- 1 --}}
@@ -54,8 +55,8 @@
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
                                 <select  name="product_name" class="form-control">
                                     <option value="" selected disabled>...</option>
-                                    <option value="paper_cup_single_wall">Paper Cup Single Wall</option>
-                                    <option value="paper_cup_double_wall">Paper Cup Double Wall</option>
+                                    <option value="Paper Napkin Comes in PocketsWhite">Paper Napkin Comes in PocketsWhite</option>
+                                    
                                 </select>
                             </div>
                             {{-- <div class="col">
@@ -71,17 +72,11 @@
                                 <select  name="model" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
-                                    <option value="female" @if (old('gender') == 'female') selected="selected" @endif>female</option>
-                                    <option value="Classic">Classic</option>
-                                    <option value="U-Shaped">U-Shaped</option>
-                                    <option value="Sauce Cup">Sauce Cup</option>
-                                    <option value="IceCream Cup">IceCream Cup</option>
+                                    <option value="Comes in Pockets">Comes in Pockets</option>
+                                    
                                 </select>
                             </div>
-                            <div class="col">
-                                <label for="length">Length</label>
-                                <input value="{{$paperCup->length}}"  type="decimal" name="length" placeholder="Length" class="form-control">
-                            </div>
+                            
                             
                         </div>
                         {{-- 3 --}}
@@ -90,11 +85,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="width">Width</label>
-                                <input value="{{$paperCup->width}}"  type="decimal" name="width" placeholder="width" class="form-control">
+                                <input value="{{$paperNabkin->width}}" type="double" name="width" placeholder="width" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="height">Height</label>
-                                <input value="{{$paperCup->height}}"  type="decimal" name="height" placeholder="height" class="form-control">
+                                <input value="{{$paperNabkin->height}}" type="double" name="height" placeholder="height" class="form-control">
                             </div>
                         </div>
                         <br>
@@ -120,7 +115,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="additional_text">Additional Text</label>
-                                <textarea  class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
+                                <textarea vallue="{{$paperNabkin->additional_text}}" class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
                             </div>
                         </div>
                         {{-- 8 --}}
@@ -129,7 +124,7 @@
                                 <p class="text-danger">Upload Only ( pdf, jpeg , png ) files</p>
                                 <h5 class="card-title">Files</h5>
                                 <div class="col-sm-12 col-md-12">
-                                    <input value  type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
+                                    <input  type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
                                 </div>
                             </div>
                         </div>
@@ -139,21 +134,12 @@
                         {{-- 4 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="material_type" class="control-label">Material Type</label>
-                                <select  name="material_type" class="form-control">
+                                <label for="material_colors" class="control-label">Material Colors</label>
+                                <select  name="material_colors" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
-                                    <option value="PET">PET</option>
-                                    <option value="PP">PP</option>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <label for="material_color" class="control-label">Material Colors</label>
-                                <select  name="material_color" class="form-control">
-                                    <!--placeholder-->
-                                    <option value="" selected disabled>...</option>
-                                    <option value="Clear">Clear</option>
-                                    <option value="Black">Black</option>
+                                    <option value="Brown">Brown</option>
+                                    <option value="White">White</option>
                                 </select>
                             </div>
                         </div>
@@ -162,25 +148,31 @@
                         <div class="row">
                             <div class="col">
                                 <label for="quantity_per_item">Quantity</label>
-                                <input value="{{$paperCup->quantity_per_item}}  type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
+                                <input value="{{$paperNabkin->quantity_per_item}}" type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
                             </div>
                             
+                            <div class="col">
+                                <label for="layer_number" class="control-label">How many Layers</label>
+                                <input value="{{$paperNabkin->layer_number}}" type="number" name="layer_number" placeholder="thickness" class="form-control">
+                            </div>
                         </div>
                         <br>
-                        {{-- 5 --}}
+                        
+                        {{-- 6 --}}
+                        {{-- 7 --}}
                         <div class="row">
                             <div class="col">
-                                <label for="effets" class="control-label">Effects</label>
-                                <select  name="effects[]" multiple='multiple' class="form-control">
-                                    <option value="" selected disabled>...</option>
-                                    <option value="SPOT UV">SPOT UV</option>
-                                </select>
+                                <label for="paper_thickness">Paper Thickness</label>
+                                <input value="{{$paperNabkin->paper_thickness}}" type="float" name="paper_thickness" placeholder="thickness" class="form-control">
+                            </div>
+
+                            <div class="col">
+                                <label for="sheets_per_packet" class="control-label">Sheet Per Packet</label>
+                                <input value="{{$paperNabkin->sheets_per_packet}}" type="number" name="sheets_per_packet" placeholder="thickness" class="form-control">
                             </div>
                             
                         </div>
-                        <br>
-                        {{-- 6 --}}
-                        
+
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary">Create</button>
                         </div>

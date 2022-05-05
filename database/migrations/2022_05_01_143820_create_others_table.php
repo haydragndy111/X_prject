@@ -17,7 +17,7 @@ class CreateOthersTable extends Migration
             $table->id();
             $table->string('material_color');
             $table->string('material_type');
-            $table->string('quantity');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }

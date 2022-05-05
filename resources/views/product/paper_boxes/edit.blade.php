@@ -34,14 +34,15 @@
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{route('PaperBox.store')}}" method="POST" enctype="multipart/form-data" autocomplete="off">
+                    <form action="{{route('PaperBox.update',$paperBox->id)}}" method="POST" enctype="multipart/form-data" autocomplete="off">
+                        @method('PUT')
                         @csrf
                         {{-- 1 --}}
                         <div class="row">
                             <div class="col">
                                 <label for="product_department" class="control-label">@lang('lang.Product Department')</label>
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <select required name="product_department" class="form-control">
+                                <select name="product_department" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Packaging">@lang('lang.Packaging')</option>
                                 </select>
@@ -50,7 +51,7 @@
                             <div class="col">
                                 <label for="product_name" class="control-label">@lang('lang.product') @lang('lang.Name')</label>
                                 {{-- <input type="text" class="form-control" id="inputName" name="product_name"> --}}
-                                <select required name="product_name" class="form-control">
+                                <select name="product_name" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Paper Box Cubica Infercode White">@lang('lang.Paper Box Cubical Infercode White')</option>
                                     <option value="Paper Box Rectangular Duplex White">@lang('lang.Paper Box Rectangular Duplex White')</option>
@@ -66,7 +67,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="model" class="control-label">Model</label>
-                                <select required name="model" class="form-control">
+                                <select name="model" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="single wall">@lang('lang.Single Wall')</option>
@@ -75,7 +76,7 @@
                             </div>
                             <div class="col">
                                 <label for="length">Length</label>
-                                <input required type="double" name="length" placeholder="Length" class="form-control">
+                                <input value="{{$paperBox->length}}" type="double" name="length" placeholder="Length" class="form-control">
                             </div>
                         </div>
                         {{-- 3 --}}
@@ -85,18 +86,18 @@
                             <div class="col">
 <<<<<<< HEAD
                                 <label for="width">Width</label>
-                                <input required type="double" name="width" placeholder="width" class="form-control">
+                                <input value="{{$paperBox->width}}" type="double" name="width" placeholder="width" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="height">Height</label>
-                                <input required type="double" name="height" placeholder="height" class="form-control">
+                                <input value="{{$paperBox->width}}" type="double" name="height" placeholder="height" class="form-control">
 =======
                                 <label for="width">@lang('lang.White')</label>
-                                <input type="double" name="width" placeholder="width" class="form-control">
+                                <input value="{{$paperBox->width}}" type="double" name="width" placeholder="width" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="height">@lang('lang.Height')</label>
-                                <input type="double" name="height" placeholder="height" class="form-control">
+                                <input value="{{$paperBox->width}}" type="double" name="height" placeholder="height" class="form-control">
 >>>>>>> 6e52fd35b7ca8e4d9c5af31f8fd42223ba47cd7c
                             </div>
                             
@@ -105,7 +106,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="product_type" class="control-label">Product Type</label>
-                                <select required name="product_type" class="form-control">
+                                <select name="product_type" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Customied">@lang('lang.Customied')</option>
                                     <option value="Standard">@lang('lang.Standard')</option>
@@ -113,7 +114,7 @@
                             </div>
                             <div class="col">
                                 <label for="branding" class="control-label">Branding</label>
-                                <select required name="branding" class="form-control">
+                                <select name="branding" class="form-control">
                                     <option value="" selected disabled>...</option>
                                     <option value="Printing">@lang('lang.Printing')</option>
                                     <option value="Not-Printing">@lang('lang.Not-Printing')</option>
@@ -124,7 +125,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="additional_text">Additional Text</label>
-                                <textarea required class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
+                                <textarea value="{{$paperBox->additional_text}}" class="form-control" id="exampleTextarea" name="additional_text" rows="3"></textarea>
                             </div>
                         </div>
                         {{-- 8 --}}
@@ -133,7 +134,7 @@
                                 <p class="text-danger">@lang('lang.Upload Only')  ( pdf, jpeg , png ) files</p>
                                 <h5 class="card-title">@lang('lang.Files')</h5>
                                 <div class="col-sm-12 col-md-12">
-                                    <input required type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
+                                    <input type="file" name="files[]" class="form-control" accept="file/*" enctype="multipart/form-data">
                                 </div>
                             </div>
                         </div>
@@ -144,7 +145,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="material_type" class="control-label">Material Type</label>
-                                <select required name="material_type" class="form-control">
+                                <select name="material_type" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="kraft">@lang('lang.Kraft')</option>
@@ -154,7 +155,7 @@
                             </div>
                             <div class="col">
                                 <label for="material_colors" class="control-label">Material Colors</label>
-                                <select required name="material_colors" class="form-control">
+                                <select name="material_colors" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="white">@lang('lang.White')</option>
@@ -167,11 +168,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="quantity_per_item">Quantity</label>
-                                <input required type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
+                                <input value="{{$paperBox->width}}" type="number" name="quantity_per_item" placeholder="quantity" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="print_type">Print Type</label>
-                                <select required name="print_type" class="form-control">
+                                <select name="print_type" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Single Face">@lang('lang.Single Face')</option>
@@ -184,7 +185,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="effets" class="control-label">Effects</label>
-                                <select required name="effects[]"  multiple="multiple" class="form-control">
+                                <select name="effects[]"  multiple="multiple" class="form-control">
                                     <option value="" selected disabled >...</option>
                                     <option value="Copper Foil">@lang('lang.Copper Foil')</option>
                                     <option value="Green Foil">@lang('lang.Green Foil')</option>
@@ -196,7 +197,7 @@
                             
                             <div class="col">
                                 <label for="uom" class="control-label">UOM</label>
-                                <select required name="uom" class="form-control">
+                                <select name="uom" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="KG">KG</option>
@@ -205,7 +206,7 @@
                             </div>
                             <div class="col">
                                 <label for="capacity">Capacity</label></label>
-                                <select required name="capacity" class="form-control">
+                                <select name="capacity" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="gm">gm</option>
@@ -217,11 +218,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="single_board_height">Single Board Width</label>
-                                <input required type="float" name="single_board_height" placeholder="number" class="form-control">
+                                <input value="{{$paperBox->single_board_height}}" type="float" name="single_board_height" placeholder="number" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="single_board_width">Single Board Width</label>
-                                <input required type="float" name="single_board_width" placeholder="number" class="form-control">
+                                <input value="{{$paperBox->single_board_width}}" type="float" name="single_board_width" placeholder="number" class="form-control">
                             </div>
                             
                         </div>
@@ -230,7 +231,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="solovan_layer">Solovan Layer</label>
-                                <select required name="solovan_layer" class="form-control">
+                                <select name="solovan_layer" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Clear">@lang('lang.Clear')</option>
@@ -240,7 +241,7 @@
                             <div class="col">
 <<<<<<< HEAD
                                 <label for="uv_layer">UV Layer</label>
-                                <select required name="uv_layer" class="form-control">
+                                <select name="uv_layer" class="form-control">
 =======
                                 <label for="uv_layer">UV @lang('lang.Layer')</label>
                                 <select name="uv_layer" class="form-control">
@@ -253,7 +254,7 @@
                             </div>
                             <div class="col">
                                 <label for="coverage">Coverage</label>
-                                <select required name="coverage" class="form-control">
+                                <select name="coverage" class="form-control">
                                     <!--placeholder-->
                                     <option value="" selected disabled>...</option>
                                     <option value="Yes">@lang('lang.Yes')</option>
@@ -266,26 +267,26 @@
                         <div class="row">
                             <div class="col">
                                 <label for="paper_thickness">Paper Thickness</label>
-                                <input required type="float" name="paper_thickness" placeholder="thickness" class="form-control">
+                                <input value="{{$paperBox->paper_thickness}}" type="float" name="paper_thickness" placeholder="thickness" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="glue_points_number">Glue Points Count</label>
-                                <input required type="number" name="glue_points_number" placeholder="count" class="form-control">
+                                <input value="{{$paperBox->glue_points_number}}" type="number" name="glue_points_number" placeholder="count" class="form-control">
                             </div>
                             
                         </div>
                         <div class="row">
                             <div class="col">
                                 <label for="window_shape">Window Width</label>
-                                <input required type="text" name="window_shape" placeholder="shape" class="form-control">
+                                <input value="{{$paperBox->window_shape}}" type="text" name="window_shape" placeholder="shape" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="window_width">Window Width</label>
-                                <input required type="float" name="window_width" placeholder="width" class="form-control">
+                                <input value="{{$paperBox->window_width}}" type="float" name="window_width" placeholder="width" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="window_height">Window Height</label>
-                                <input required type="float" name="window_height" placeholder="heighht" class="form-control">
+                                <input value="{{$paperBox->window_height}}" type="float" name="window_height" placeholder="heighht" class="form-control">
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">

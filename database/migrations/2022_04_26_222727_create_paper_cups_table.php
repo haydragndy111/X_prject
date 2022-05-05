@@ -24,7 +24,7 @@ class CreatePaperCupsTable extends Migration
             $table->string('material_colors');
             $table->string('finger_print_color');
             $table->string('uom');
-            $table->varchar('capacity');
+            $table->string('capacity');
             $table->string('effects');
             $table->decimal('thickness',5,2);
             $table->timestamps();
